@@ -1,3 +1,5 @@
+import MeltedTitle from '@/components/MeltedTitle';
+import SurrealBackground from '@/components/SurrealBackground';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Google from 'expo-auth-session/providers/google';
 import * as Haptics from 'expo-haptics';
@@ -9,7 +11,6 @@ import {
   ActivityIndicator,
   Animated,
   Dimensions,
-  Easing,
   Keyboard,
   KeyboardAvoidingView,
   Platform,
@@ -19,15 +20,17 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View,
+  View
 } from 'react-native';
 import { auth, db, googleProvider } from '../firebaseconfig/firebaseconfig';
+import { useSurrealAnime } from '../hooks/useSurrealAnime';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 const SHAPE_SIZE = 180;
 
 export default function LoginScreen() {
   const router = useRouter();
+  const { circAnim, rectAnim, meltAnim } = useSurrealAnime();
   const [request, response, promptAsync] = Google.useAuthRequest({
     androidClientId: "1000450722631-8ejmu5sjsndmte9vrsns0tmhr47h50dh.apps.googleusercontent.com",
     iosClientId: "1000450722631-8ejmu5sjsndmte9vrsns0tmhr47h50dh.apps.googleusercontent.com",
@@ -76,39 +79,19 @@ export default function LoginScreen() {
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   // Animations
-  const circleAnim = useRef(new Animated.Value(0)).current;
-  const rectAnim   = useRef(new Animated.Value(0)).current;
-  const meltAnim   = useRef(new Animated.Value(0)).current;
   const formFade   = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    // Load email history
-    AsyncStorage.getItem('previousEmails').then(stored => {
-      if (stored) setSuggestions(JSON.parse(stored));
-    });
-    // Animate shapes
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(circleAnim, { toValue:1, duration:6000, easing:Easing.linear, useNativeDriver:true }),
-        Animated.timing(circleAnim, { toValue:0, duration:6000, easing:Easing.linear, useNativeDriver:true }),
-      ])
-    ).start();
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(rectAnim, { toValue:1, duration:8000, easing:Easing.inOut(Easing.ease), useNativeDriver:true }),
-        Animated.timing(rectAnim, { toValue:0, duration:8000, easing:Easing.inOut(Easing.ease), useNativeDriver:true }),
-      ])
-    ).start();
-    // Heading “melt”
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(meltAnim, { toValue:1, duration:2000, easing:Easing.inOut(Easing.quad), useNativeDriver:true }),
-        Animated.timing(meltAnim, { toValue:0, duration:2000, easing:Easing.inOut(Easing.quad), useNativeDriver:true }),
-      ])
-    ).start();
-    // Fade in form
-    Animated.timing(formFade, { toValue:1, delay:800, duration:600, easing:Easing.out(Easing.exp), useNativeDriver:true }).start();
-  }, []);
+  AsyncStorage.getItem('previousEmails').then(stored => {
+    if (stored) setSuggestions(JSON.parse(stored));
+  });
+
+  Animated.timing(formFade, {
+    toValue: 1,
+    duration: 600,
+    useNativeDriver: true,
+  }).start();
+}, []);
 
   const handleLogin = async () => {
     setError(null);
@@ -151,44 +134,11 @@ export default function LoginScreen() {
       style={styles.container}
     >
       {/* moving abstract shapes */}
-      <Animated.View
-        style={[
-          styles.shapeCircle,
-          {
-            transform: [
-              { translateX: circleAnim.interpolate({ inputRange:[0,1], outputRange:[-SHAPE_SIZE, SCREEN_WIDTH*0.6] }) },
-              { translateY: circleAnim.interpolate({ inputRange:[0,1], outputRange:[-SHAPE_SIZE*0.5, SCREEN_HEIGHT*0.2] }) },
-            ],
-          },
-        ]}
-      />
-      <Animated.View
-        style={[
-          styles.shapeRect,
-          {
-            transform: [
-              { rotate: rectAnim.interpolate({ inputRange:[0,1], outputRange:['0deg','360deg'] }) }
-            ],
-          },
-        ]}
-      />
+      <SurrealBackground circAnim={circAnim} rectAnim={rectAnim} />
 
       <SafeAreaView style={styles.inner}>
         {/* CPH:DOX title */}
-        <Animated.Text
-          style={[
-            styles.appTitle,
-            {
-              transform: [
-                { skewX: meltAnim.interpolate({ inputRange:[0,1], outputRange:['0deg','10deg'] }) },
-                { translateY: meltAnim.interpolate({ inputRange:[0,1], outputRange:[0,10] }) },
-              ],
-              opacity: meltAnim.interpolate({ inputRange:[0,1], outputRange:[1,0.8] }),
-            },
-          ]}
-        >
-          CPH:DOX
-        </Animated.Text>
+        <MeltedTitle meltAnim={meltAnim} text="LOGIN" />
 
         {/* Short tagline */}
         <Text style={styles.tagline}>
@@ -250,7 +200,7 @@ export default function LoginScreen() {
         )}
       </SafeAreaView>
     </KeyboardAvoidingView>
-  );
+);
 }
 
 const styles = StyleSheet.create({

@@ -1,13 +1,12 @@
+import MeltedTitle from '@/components/MeltedTitle';
+import SurrealBackground from '@/components/SurrealBackground';
 import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { collection, doc, getDocs, query, serverTimestamp, setDoc, where } from 'firebase/firestore';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import {
   ActivityIndicator,
-  Animated,
-  Dimensions,
-  Easing,
   Keyboard,
   KeyboardAvoidingView,
   Platform,
@@ -16,11 +15,10 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  View,
+  View
 } from 'react-native';
 import { auth, db } from '../firebaseconfig/firebaseconfig';
-
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+import { useSurrealAnime } from '../hooks/useSurrealAnime';
 const SHAPE_SIZE = 200;
 
 export default function SignupScreen() {
@@ -31,35 +29,7 @@ export default function SignupScreen() {
   const [password, setPassword] = useState('');
   const [error, setError]       = useState<string|null>(null);
   const [loading, setLoading]   = useState(false);
-
-  // Animations
-  const circAnim = useRef(new Animated.Value(0)).current;
-  const rectAnim = useRef(new Animated.Value(0)).current;
-  const meltAnim = useRef(new Animated.Value(0)).current;
-
-  useEffect(() => {
-    // loop circle
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(circAnim, { toValue:1, duration:8000, easing:Easing.linear, useNativeDriver:true }),
-        Animated.timing(circAnim, { toValue:0, duration:8000, easing:Easing.linear, useNativeDriver:true }),
-      ])
-    ).start();
-    // loop rect
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(rectAnim, { toValue:1, duration:10000, easing:Easing.inOut(Easing.ease), useNativeDriver:true }),
-        Animated.timing(rectAnim, { toValue:0, duration:10000, easing:Easing.inOut(Easing.ease), useNativeDriver:true }),
-      ])
-    ).start();
-    // melt heading
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(meltAnim, { toValue:1, duration:2500, easing:Easing.inOut(Easing.quad), useNativeDriver:true }),
-        Animated.timing(meltAnim, { toValue:0, duration:2500, easing:Easing.inOut(Easing.quad), useNativeDriver:true }),
-      ])
-    ).start();
-  }, []);
+  const { circAnim, rectAnim, meltAnim } = useSurrealAnime();
 
   const handleSignup = async () => {
     setError(null);
@@ -99,39 +69,13 @@ export default function SignupScreen() {
       style={styles.container}
     >
       {/* Surreal shapes */}
-      <Animated.View style={[
-        styles.circle,
-        {
-          transform: [{
-            translateX: circAnim.interpolate({ inputRange:[0,1], outputRange:[-SHAPE_SIZE, SCREEN_WIDTH*0.7] })
-          },{
-            translateY: circAnim.interpolate({ inputRange:[0,1], outputRange:[-SHAPE_SIZE*0.6, SCREEN_HEIGHT*0.3] })
-          }]
-        }
-      ]}/>
-      <Animated.View style={[
-        styles.rect,
-        {
-          transform: [{
-            rotate: rectAnim.interpolate({ inputRange:[0,1], outputRange:['0deg','360deg'] })
-          }]
-        }
-      ]}/>
+      <SurrealBackground
+  circAnim={circAnim}
+  rectAnim={rectAnim}
+/>
 
-      <SafeAreaView style={styles.inner}>
-        {/* Melted heading */}
-        <Animated.Text style={[
-          styles.heading,
-          {
-            transform: [
-              { skewX: meltAnim.interpolate({inputRange:[0,1],outputRange:['0deg','12deg']}) },
-              { translateY: meltAnim.interpolate({inputRange:[0,1],outputRange:[0,8]}) }
-            ],
-            opacity: meltAnim.interpolate({inputRange:[0,1],outputRange:[1,0.8]})
-          }
-        ]}>
-          SIGN UP
-        </Animated.Text>
+    <SafeAreaView style={styles.inner}>
+      <MeltedTitle meltAnim={meltAnim} text="SIGN UP" />
 
         {/* Brief description */}
         <Text style={styles.brief}>
