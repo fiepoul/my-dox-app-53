@@ -88,7 +88,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    // give room for our shapes
     height: 48,
   },
   squareBehind: {

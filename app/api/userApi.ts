@@ -35,7 +35,7 @@ import {
     const userRef = doc(db, 'users', currentUser.uid)
     const friendRef = doc(db, 'users', friend.uid)
   
-    // Tilføj venskab begge veje
+    // Friendship is mutual, so we add both users to each other's friends list
     await updateDoc(userRef, {
       friends: arrayUnion(friend.uid),
     })

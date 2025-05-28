@@ -11,7 +11,7 @@ import {
 
 interface AddFriendProps {
   /** Optional prompt shown above input */
-  promptText?: string
+  promptText: string
 }
 
 export default function AddFriend({ promptText }: AddFriendProps) {
@@ -31,12 +31,7 @@ export default function AddFriend({ promptText }: AddFriendProps) {
 
   return (
     <View style={styles.wrapper}>
-      {/* Show custom prompt or default heading */}
-      {promptText ? (
-        <Text style={styles.prompt}>{promptText.toUpperCase()}</Text>
-      ) : (
-        <Text style={styles.heading}>ADD FRIEND</Text>
-      )}
+      <Text style={styles.prompt}>{promptText.toUpperCase()}</Text>
 
       <TextInput
         placeholder="USERNAME"
@@ -63,7 +58,7 @@ export default function AddFriend({ promptText }: AddFriendProps) {
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: '90%',            // make it slightly wider
+    width: '90%',            
     alignSelf: 'center',
     backgroundColor: '#fff',
     paddingVertical: 32,

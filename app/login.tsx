@@ -39,27 +39,27 @@ export default function LoginScreen() {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
   
-      console.log("✅ Logged in as:", user.email);
+      console.log("Logged in as:", user.email);
   
       const userDocRef = doc(db, 'users', user.uid);
       const userSnap = await getDoc(userDocRef);
   
       if (!userSnap.exists()) {
-        // 🔧 Opret bruger-dokument med samme felter som email-signup
+        // Create user document with same fields as email signup
         await setDoc(userDocRef, {
           fullName: user.displayName || '',
           username: user.email?.split('@')[0] || 'user',
           createdAt: serverTimestamp(),
           friends: [],
-          // favorites kommer automatisk som en subcollection, så den oprettes først når du sætter noget ind i den
+          // favorites is added as a subcollection automatically
         });
-        console.log('📄 Firestore-profil oprettet for Google-bruger');
+        console.log('Firestore profile created for Google user');
       }
   
-      // Gå videre til appen
+      // Go to home screen
       router.replace('/');
     } catch (err) {
-      console.error("❌ Google login fejlede:", err);
+      console.error("Google login failed:", err);
     }
   };
 
@@ -104,7 +104,6 @@ export default function LoginScreen() {
         await AsyncStorage.setItem('previousEmails', JSON.stringify([email.trim(), ...list].slice(0, 5)));
       }
   
-      // ✅ Haptics kun hvis ikke web
       if (Platform.OS !== 'web') {
         await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
       }

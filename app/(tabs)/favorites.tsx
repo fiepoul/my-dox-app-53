@@ -1,5 +1,4 @@
-// app/(tabs)/favorites.tsx
-
+// This file shows the users favorite films from the Dox API.
 import FilmCard from '@/components/filmCard';
 import { commonStyles } from '@/styles/CommonStyles';
 import type { Film } from '@/types/filmTypes';
@@ -82,7 +81,7 @@ export default function FavoritesScreen() {
         columnWrapperStyle={styles.row}
         contentContainerStyle={[
           styles.list,
-          { paddingTop: HEADER_OFFSET + 24 }, // rykkes længere ned
+          { paddingTop: HEADER_OFFSET + 24 }, 
         ]}
         ListHeaderComponent={
           <View style={styles.headerBlock}>

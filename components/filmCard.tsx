@@ -1,4 +1,4 @@
-// components/FilmCard.tsx
+// This component displays a film card with a poster, title, tagline, info line, and a favorite icon. It uses React Native components and styles to create a visually appealing layout.
 
 import type { Film } from '@/types/filmTypes'
 import * as Haptics from 'expo-haptics'

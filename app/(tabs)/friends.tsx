@@ -1,5 +1,4 @@
-// app/(tabs)/friends.tsx
-
+// This file shows the user's friends and their favorite films.
 import AddFriend from '@/components/addFriends';
 import { commonStyles } from '@/styles/CommonStyles';
 import { Ionicons } from '@expo/vector-icons';
@@ -65,7 +64,7 @@ export default function FriendsTab() {
         keyExtractor={(item, idx) => item.uid + idx}
         contentContainerStyle={[
           styles.list,
-          { paddingTop: HEADER_OFFSET + 24 }, // lift up slightly more
+          { paddingTop: HEADER_OFFSET + 24 },
         ]}
         ListHeaderComponent={
           <View style={styles.headerBlock}>
