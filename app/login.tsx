@@ -1,5 +1,6 @@
 import MeltedTitle from '@/components/MeltedTitle';
 import SurrealBackground from '@/components/SurrealBackground';
+import { commonStyles } from '@/styles/CommonStyles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Google from 'expo-auth-session/providers/google';
 import * as Haptics from 'expo-haptics';
@@ -10,7 +11,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Animated,
-  Dimensions,
   Keyboard,
   KeyboardAvoidingView,
   Platform,
@@ -24,9 +24,6 @@ import {
 } from 'react-native';
 import { auth, db, googleProvider } from '../firebaseconfig/firebaseconfig';
 import { useSurrealAnime } from '../hooks/useSurrealAnime';
-
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
-const SHAPE_SIZE = 180;
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -131,17 +128,17 @@ export default function LoginScreen() {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS==='ios'?'padding':undefined}
-      style={styles.container}
+      style={[commonStyles.container]}
     >
       {/* moving abstract shapes */}
       <SurrealBackground circAnim={circAnim} rectAnim={rectAnim} />
 
       <SafeAreaView style={styles.inner}>
         {/* CPH:DOX title */}
-        <MeltedTitle meltAnim={meltAnim} text="LOGIN" />
+        <MeltedTitle meltAnim={meltAnim} text="CPH:DOX" style={{ color: 'orange' }}/>
 
         {/* Short tagline */}
-        <Text style={styles.tagline}>
+        <Text style={[commonStyles.headerSub]}>
           Dive into the festival universe.
         </Text>
 
@@ -183,8 +180,8 @@ export default function LoginScreen() {
               }
             </Pressable>
 
-            <Pressable onPress={handleGoogleLogin} style={styles.googleButton}>
-              <Text style={styles.googleText}>LOGIN MED GOOGLE</Text>
+            <Pressable onPress={handleGoogleLogin} style={styles.loginButton}>
+              <Text style={styles.loginText}>LOGIN MED GOOGLE</Text>
             </Pressable>
 
             <Pressable onPress={() => router.push('/signup')} style={styles.signupButton}>
@@ -204,7 +201,6 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
   inner: {
     flex: 1,
     alignItems: 'center',
@@ -212,47 +208,20 @@ const styles = StyleSheet.create({
     padding: 24,
   },
 
-  googleButton: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#0047ff',
-    paddingVertical: 14,
-    alignItems: 'center',
-    marginBottom: 12,
-  },
+  loginButton: {
+  backgroundColor: '#fff',
+  borderWidth: 1,
+  borderColor: '#0047ff',
+  paddingVertical: 14,
+  alignItems: 'center',
+  marginBottom: 12,
+},
   
-  googleText: {
+  loginText: {
     color: '#0047ff',
     fontWeight: '700',
     fontSize: 16,
     letterSpacing: 1,
-  },
-  shapeCircle: {
-    position: 'absolute',
-    width: SHAPE_SIZE,
-    height: SHAPE_SIZE,
-    borderRadius: SHAPE_SIZE/2,
-    backgroundColor: 'rgba(0,68,255,0.1)',
-  },
-  shapeRect: {
-    position: 'absolute',
-    width: SHAPE_SIZE*1.2,
-    height: SHAPE_SIZE*0.5,
-    backgroundColor: 'rgba(255,64,129,0.1)',
-  },
-  appTitle: {
-    fontSize: 36,
-    fontWeight: '900',
-    letterSpacing: 6,
-    color: '#0047ff',
-    marginBottom: 8,
-  },
-  tagline: {
-    fontSize: 16,
-    color: '#555',
-    fontStyle: 'italic',
-    marginBottom: 24,
-    textAlign: 'center',
   },
   frame: {
     borderWidth: 2,
@@ -275,26 +244,15 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: '#eee',
   },
-  loginButton: {
-    backgroundColor: '#0047ff',
-    paddingVertical: 14,
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-  loginText: {
-    color: '#fff',
-    fontWeight: '900',
-    fontSize: 16,
-    letterSpacing: 2,
-  },
   signupButton: {
+    backgroundColor: '#0047ff',
     borderWidth: 1,
     borderColor: '#0047ff',
     paddingVertical: 12,
     alignItems: 'center',
   },
   signupText: {
-    color: '#0047ff',
+    color: '#fff',
     fontWeight: '700',
     fontSize: 16,
     letterSpacing: 1,

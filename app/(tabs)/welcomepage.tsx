@@ -1,3 +1,4 @@
+import { commonStyles } from '@/styles/CommonStyles';
 import type { Film } from '@/types/filmTypes';
 import { AntDesign } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -102,7 +103,7 @@ export default function HomeScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[commonStyles.container]}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <View style={styles.header}>
         <Text style={styles.logo}>DOX</Text>
@@ -115,8 +116,8 @@ export default function HomeScreen() {
               hi, <Text style={styles.name}>{fullName.toUpperCase()}</Text>
             </Text>
             <View style={styles.separator} />
-            <Text style={styles.tagline}>
-              Radical visions. Human stories. Curated cinema from CPH:DOX and beyond.
+            <Text style={[commonStyles.headerSub]}>
+              A social film app. Built without pull requests.
             </Text>
           </View>
 
@@ -127,7 +128,7 @@ export default function HomeScreen() {
             </TouchableOpacity>
             {myFavorites.length > 0
               ? renderPosterRow(myFavorites)
-              : <Text style={styles.emptyText}>You haven’t liked any films yet.</Text>}
+              : <Text style={[commonStyles.emptyText]}>You haven’t liked any films yet.</Text>}
           </View>
 
           <View style={styles.section}>
@@ -143,7 +144,7 @@ export default function HomeScreen() {
                   .slice(0, 10)
               )
             ) : (
-              <Text style={styles.emptyText}>Your friends haven’t liked any films yet.</Text>
+              <Text style={[commonStyles.emptyText]}>Your friends haven’t liked any films yet.</Text>
             )}
           </View>
         </ScrollView>
@@ -153,7 +154,6 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#ffffff' },
   header: {
     height: 80,
     justifyContent: 'center',
@@ -194,14 +194,6 @@ const styles = StyleSheet.create({
     marginTop: 8,
     marginBottom: 14,
   },
-  tagline: {
-    fontSize: 15,
-    color: '#333',
-    textAlign: 'center',
-    fontStyle: 'italic',
-    paddingHorizontal: 6,
-    lineHeight: 22,
-  },
   section: {
     marginBottom: 44,
   },
@@ -237,11 +229,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textTransform: 'uppercase',
     letterSpacing: 0.5,
-  },
-  emptyText: {
-    color: '#aaa',
-    fontSize: 14,
-    fontStyle: 'italic',
-    paddingLeft: 4,
-  },
+  }
 });

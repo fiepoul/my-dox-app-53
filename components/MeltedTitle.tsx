@@ -1,5 +1,6 @@
+import { commonStyles } from '@/styles/CommonStyles';
 import React from 'react';
-import { Animated, StyleSheet, TextStyle } from 'react-native';
+import { Animated, TextStyle } from 'react-native';
 
 type Props = {
   meltAnim: Animated.Value;
@@ -11,7 +12,7 @@ export default function MeltedTitle({ meltAnim, text, style }: Props) {
   return (
     <Animated.Text
       style={[
-        styles.heading,
+        commonStyles.headerMain,
         style,
         {
           transform: [
@@ -39,15 +40,3 @@ export default function MeltedTitle({ meltAnim, text, style }: Props) {
     </Animated.Text>
   );
 }
-
-const styles = StyleSheet.create({
-  heading: {
-    fontSize: 32,
-    fontWeight: '900',
-    letterSpacing: 4,
-    color: '#000',
-    marginBottom: 8,
-    alignSelf: 'center',
-    marginTop: 64,
-  },
-});

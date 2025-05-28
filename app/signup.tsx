@@ -1,5 +1,6 @@
 import MeltedTitle from '@/components/MeltedTitle';
 import SurrealBackground from '@/components/SurrealBackground';
+import { commonStyles } from '@/styles/CommonStyles';
 import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -19,7 +20,6 @@ import {
 } from 'react-native';
 import { auth, db } from '../firebaseconfig/firebaseconfig';
 import { useSurrealAnime } from '../hooks/useSurrealAnime';
-const SHAPE_SIZE = 200;
 
 export default function SignupScreen() {
   const router = useRouter();
@@ -66,7 +66,7 @@ export default function SignupScreen() {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS==='ios'?'padding':undefined}
-      style={styles.container}
+      style={[commonStyles.container]}
     >
       {/* Surreal shapes */}
       <SurrealBackground
@@ -75,7 +75,7 @@ export default function SignupScreen() {
 />
 
     <SafeAreaView style={styles.inner}>
-      <MeltedTitle meltAnim={meltAnim} text="SIGN UP" />
+      <MeltedTitle meltAnim={meltAnim} text="SIGN UP" style={{ color: '#2ecc40' }}/>
 
         {/* Brief description */}
         <Text style={styles.brief}>
@@ -138,21 +138,7 @@ export default function SignupScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex:1, backgroundColor:'#fff' },
   inner: { flex:1, alignItems:'center', justifyContent:'center', padding:24 },
-  circle: {
-    position:'absolute',
-    width:SHAPE_SIZE,
-    height:SHAPE_SIZE,
-    borderRadius:SHAPE_SIZE/2,
-    backgroundColor:'rgba(0,68,255,0.1)'
-  },
-  rect: {
-    position:'absolute',
-    width:SHAPE_SIZE*1.3,
-    height:SHAPE_SIZE*0.4,
-    backgroundColor:'rgba(255,64,129,0.1)'
-  },
   heading: {
     fontSize:32,
     fontWeight:'900',

@@ -1,18 +1,18 @@
-import FilmCard from '@/components/filmCard'
-import type { Film } from '@/types/filmTypes'
-import * as Haptics from 'expo-haptics'
-import { useRouter } from 'expo-router'
-import React, { useCallback, useEffect, useState } from 'react'
+import FilmCard from '@/components/filmCard';
+import { commonStyles } from '@/styles/CommonStyles';
+import type { Film } from '@/types/filmTypes';
+import * as Haptics from 'expo-haptics';
+import { useRouter } from 'expo-router';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   FlatList,
   Platform,
-  StatusBar,
   StyleSheet,
-  View,
-} from 'react-native'
-import { addFavorite, fetchFavorites, removeFavorite } from '../api/DoxFavoritesApi'
-import { fetchDoxFilms } from '../api/DoxFilmApi'
+  View
+} from 'react-native';
+import { addFavorite, fetchFavorites, removeFavorite } from '../api/DoxFavoritesApi';
+import { fetchDoxFilms } from '../api/DoxFilmApi';
 
 const HEADER_HEIGHT = 80
 
@@ -71,14 +71,14 @@ export default function AllFilmsScreen() {
 
   if (loading) {
     return (
-      <View style={styles.center}>
+      <View style={[commonStyles.center]}>
         <ActivityIndicator size="large" color="#000" />
       </View>
     )
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[commonStyles.container]}>
       <FlatList
         data={films}
         keyExtractor={item => item.id.toString()}
@@ -100,12 +100,6 @@ export default function AllFilmsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    paddingTop:
-      Platform.OS === 'android' ? StatusBar.currentHeight || 0 : 0,
-  },
   list: {
     paddingTop: HEADER_HEIGHT,
     paddingHorizontal: 16,
@@ -114,10 +108,5 @@ const styles = StyleSheet.create({
   row: {
     justifyContent: 'space-between',
     marginBottom: 20,
-  },
-  center: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  }
 })

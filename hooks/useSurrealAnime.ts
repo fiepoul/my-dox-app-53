@@ -1,5 +1,4 @@
-// useSurrealAnimation.ts
-// useSurrealAnime.ts
+// This file is part of the Surreal Anime project.
 import { useEffect, useRef } from 'react';
 import { Animated, Easing } from 'react-native';
 
@@ -7,7 +6,6 @@ export function useSurrealAnime() {
   const circAnim = useRef(new Animated.Value(0)).current;
   const rectAnim = useRef(new Animated.Value(0)).current;
   const meltAnim = useRef(new Animated.Value(0)).current;
-  const formFade = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.loop(
@@ -60,16 +58,8 @@ export function useSurrealAnime() {
         }),
       ])
     ).start();
-
-    Animated.timing(formFade, {
-      toValue: 1,
-      delay: 800,
-      duration: 600,
-      easing: Easing.out(Easing.exp),
-      useNativeDriver: true,
-    }).start();
   }, []);
 
-  return { circAnim, rectAnim, meltAnim, formFade };
+  return { circAnim, rectAnim, meltAnim };
 }
 

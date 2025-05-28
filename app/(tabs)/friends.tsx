@@ -1,9 +1,10 @@
 // app/(tabs)/friends.tsx
 
-import AddFriend from '@/components/addFriends'
-import { Ionicons } from '@expo/vector-icons'
-import { useRouter } from 'expo-router'
-import React, { useCallback, useEffect, useState } from 'react'
+import AddFriend from '@/components/addFriends';
+import { commonStyles } from '@/styles/CommonStyles';
+import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   FlatList,
   Platform,
@@ -13,10 +14,10 @@ import {
   StyleSheet,
   Text,
   View,
-} from 'react-native'
-import { fetchDoxFilms } from '../api/DoxFilmApi'
-import { fetchFriendsFavorites } from '../api/friendsApi'
-import { removeFriend } from '../api/userApi'
+} from 'react-native';
+import { fetchDoxFilms } from '../api/DoxFilmApi';
+import { fetchFriendsFavorites } from '../api/friendsApi';
+import { removeFriend } from '../api/userApi';
 
 const HEADER_OFFSET =
   Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 60 : 60
@@ -58,7 +59,7 @@ export default function FriendsTab() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[commonStyles.container]}>
       <FlatList
         data={friendFavs}
         keyExtractor={(item, idx) => item.uid + idx}
@@ -70,8 +71,8 @@ export default function FriendsTab() {
           <View style={styles.headerBlock}>
             <View style={styles.orangeShape} />
             <View style={styles.accentStripe} />
-            <Text style={styles.headerMain}>MY FRIENDS</Text>
-            <Text style={styles.headerFun}>
+            <Text style={[commonStyles.headerMain]}>MY FRIENDS</Text>
+            <Text style={[commonStyles.headerSub]}>
               WHY WATCH ALONE WHEN YOU CAN AUDITION A FRIEND?
             </Text>
             <AddFriend promptText="tired of your friends' film taste?" />
@@ -122,8 +123,6 @@ export default function FriendsTab() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
-
   list: {
     paddingHorizontal: 16,
     paddingBottom: 32,
@@ -147,25 +146,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     transform: [{ rotate: '-6deg' }],
   },
-  headerMain: {
-    fontSize: 28,
-    fontWeight: '900',
-    letterSpacing: 3,
-    textTransform: 'uppercase',
-    color: '#000',
-    transform: [{ skewX: '-2deg' }],
-    marginBottom: 6,
-  },
-  headerFun: {
-    fontSize: 12,
-    color: '#333',
-    textAlign: 'center',
-    fontStyle: 'italic',
-    marginBottom: 12,
-    paddingHorizontal: 20,
-    letterSpacing: 1,
-  },
-
   block: {
     marginBottom: 12,        // tighter spacing
     padding: 12,             // keep content padding

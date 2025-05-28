@@ -1,9 +1,10 @@
 // app/(tabs)/favorites.tsx
 
-import FilmCard from '@/components/filmCard'
-import type { Film } from '@/types/filmTypes'
-import { useRouter } from 'expo-router'
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import FilmCard from '@/components/filmCard';
+import { commonStyles } from '@/styles/CommonStyles';
+import type { Film } from '@/types/filmTypes';
+import { useRouter } from 'expo-router';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Animated,
@@ -14,9 +15,9 @@ import {
   StyleSheet,
   Text,
   View,
-} from 'react-native'
-import { fetchFavorites, removeFavorite } from '../api/DoxFavoritesApi'
-import { fetchDoxFilms } from '../api/DoxFilmApi'
+} from 'react-native';
+import { fetchFavorites, removeFavorite } from '../api/DoxFavoritesApi';
+import { fetchDoxFilms } from '../api/DoxFilmApi';
 
 const HEADER_OFFSET =
   Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 60 : 60
@@ -66,14 +67,14 @@ export default function FavoritesScreen() {
 
   if (loading) {
     return (
-      <View style={styles.center}>
+      <View style={[commonStyles.center]}>
         <ActivityIndicator size="large" color="#000" />
       </View>
     )
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[commonStyles.container]}>
       <FlatList
         data={favoriteFilms}
         keyExtractor={(item) => item.id.toString()}
@@ -85,15 +86,15 @@ export default function FavoritesScreen() {
         ]}
         ListHeaderComponent={
           <View style={styles.headerBlock}>
-            <View style={styles.accentStripe} />
-            <Text style={styles.headerMain}>MY FAVORITES</Text>
-            <Text style={styles.headerSub}>
+            <View style={[commonStyles.accentStripe]} />
+            <Text style={[commonStyles.headerMain]}>MY FAVORITES</Text>
+            <Text style={[commonStyles.headerSub]}>
               Here are the films you’ve saved. Tap a poster to dive deeper.
             </Text>
           </View>
         }
         ListEmptyComponent={
-          <Text style={styles.emptyText}>
+          <Text style={[commonStyles.emptyText]}>
             YOU HAVEN’T SAVED ANY FILMS YET
           </Text>
         }
@@ -113,9 +114,6 @@ export default function FavoritesScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
-  center: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-
   list: {
     paddingHorizontal: 16,
     paddingBottom: 32,
@@ -129,37 +127,5 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     alignItems: 'center',
     zIndex: 1,
-  },
-  accentStripe: {
-    width: 80,
-    height: 4,
-    backgroundColor: '#0047ff',
-    marginBottom: 8,
-    transform: [{ rotate: '-8deg' }], // lille surreal vinkel
-  },
-  headerMain: {
-    fontSize: 26,
-    fontWeight: '900',
-    letterSpacing: 3,
-    textTransform: 'uppercase',
-    color: '#000',
-    transform: [{ skewX: '-3deg' }], // Bauhaus/surreal hint
-    marginBottom: 6,
-  },
-  headerSub: {
-    maxWidth: 280,
-    fontSize: 14,
-    color: '#333',
-    fontStyle: 'italic',
-    textAlign: 'center',
-    letterSpacing: 1,
-  },
-
-  emptyText: {
-    marginTop: 60,
-    textAlign: 'center',
-    color: '#777',
-    fontSize: 16,
-    fontStyle: 'italic',
   },
 })

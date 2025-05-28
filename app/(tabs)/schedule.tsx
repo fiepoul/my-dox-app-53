@@ -1,7 +1,8 @@
-import type { ScheduleBlock } from '@/types/filmTypes'
-import { format } from 'date-fns'
-import { useRouter } from 'expo-router'
-import React, { useEffect, useRef, useState } from 'react'
+import { commonStyles } from '@/styles/CommonStyles';
+import type { ScheduleBlock } from '@/types/filmTypes';
+import { format } from 'date-fns';
+import { useRouter } from 'expo-router';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Animated,
@@ -12,8 +13,8 @@ import {
   StyleSheet,
   Text,
   View
-} from 'react-native'
-import { fetchSchedule } from '../api/DoxFilmApi'
+} from 'react-native';
+import { fetchSchedule } from '../api/DoxFilmApi';
 
 const FESTIVAL_DATES = ['2025-05-05', '2025-05-06', '2025-05-07']
 
@@ -53,7 +54,7 @@ export default function ScheduleScreen() {
   }, [iso])
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[commonStyles.container]}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
 
       {/* Header */}
@@ -107,7 +108,6 @@ export default function ScheduleScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
