@@ -1,5 +1,5 @@
 import { commonStyles } from '@/styles/CommonStyles';
-import type { ScheduleBlock } from '@/types/filmTypes';
+import type { ScheduleBlock } from '@/types/scheduleTypes';
 import { format } from 'date-fns';
 import { useRouter } from 'expo-router';
 import React, { useEffect, useRef, useState } from 'react';

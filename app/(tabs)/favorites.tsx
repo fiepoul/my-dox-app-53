@@ -1,9 +1,9 @@
 // This file shows the users favorite films from the Dox API.
 import FilmCard from '@/components/filmCard';
+import SectionHeader from '@/components/SectionHeader';
 import { commonStyles } from '@/styles/CommonStyles';
-import type { Film } from '@/types/filmTypes';
 import { useRouter } from 'expo-router';
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import {
   ActivityIndicator,
   Animated,
@@ -15,61 +15,50 @@ import {
   Text,
   View,
 } from 'react-native';
-import { fetchFavorites, removeFavorite } from '../api/DoxFavoritesApi';
-import { fetchDoxFilms } from '../api/DoxFilmApi';
+import { removeFavorite } from '../api/DoxFavoritesApi';
+import { useAppData } from '../context/AppDataContext';
 
 const HEADER_OFFSET =
-  Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 60 : 60
+  Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 60 : 60;
 
 export default function FavoritesScreen() {
-  const router = useRouter()
-  const [films, setFilms] = useState<Film[]>([])
-  const [favIds, setFavIds] = useState<Set<string>>(new Set())
-  const [loading, setLoading] = useState(true)
-  const fadeAnim = useRef(new Animated.Value(0)).current
+  const router = useRouter();
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
-  // Load data + fade-in
+  const {
+    allFilms,
+    myFavorites,
+    loading,
+    refreshFavorites,
+  } = useAppData();
+
   useEffect(() => {
-    Animated.timing(fadeAnim, { toValue: 1, duration: 600, useNativeDriver: true }).start()
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 600,
+      useNativeDriver: true,
+    }).start();
+  }, []);
 
-    let alive = true
-    ;(async () => {
-      try {
-        const [all, favArray] = await Promise.all([fetchDoxFilms(), fetchFavorites()])
-        if (!alive) return
-        setFilms(all)
-        setFavIds(new Set(favArray.map((f) => f.id.toString())))
-      } catch (e) {
-        console.error('Failed to load', e)
-      } finally {
-        alive && setLoading(false)
-      }
-    })()
-    return () => { alive = false }
-  }, [])
+  const handleRemove = useCallback(
+    async (id: number) => {
+      await removeFavorite(id);
+      await refreshFavorites(); // 👈 opdater context-data
+    },
+    [refreshFavorites]
+  );
 
-  // Remove a favorite
-  const handleRemove = useCallback(async (id: number) => {
-    await removeFavorite(id)
-    setFavIds((prev) => {
-      const next = new Set(prev)
-      next.delete(id.toString())
-      return next
-    })
-  }, [])
-
-  // Only the films you’ve favorited
   const favoriteFilms = useMemo(
-    () => films.filter((f) => favIds.has(f.id.toString())),
-    [films, favIds]
-  )
+    () => allFilms.filter((f) => myFavorites.includes(f.id)),
+    [allFilms, myFavorites]
+  );
 
   if (loading) {
     return (
       <View style={[commonStyles.center]}>
         <ActivityIndicator size="large" color="#000" />
       </View>
-    )
+    );
   }
 
   return (
@@ -85,11 +74,10 @@ export default function FavoritesScreen() {
         ]}
         ListHeaderComponent={
           <View style={styles.headerBlock}>
-            <View style={[commonStyles.accentStripe]} />
-            <Text style={[commonStyles.headerMain]}>MY FAVORITES</Text>
-            <Text style={[commonStyles.headerSub]}>
-              Here are the films you’ve saved. Tap a poster to dive deeper.
-            </Text>
+            <SectionHeader
+              title="MY FAVORITES"
+              subtitle="Here are the films you’ve saved. Tap a poster to dive deeper."
+            />
           </View>
         }
         ListEmptyComponent={

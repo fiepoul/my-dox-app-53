@@ -1,24 +1,25 @@
+import type { FriendFavorite } from '@/types/favoriteTypes';
 import {
-    getFirestore,
-    doc,
-    getDoc,
-    collection,
-    getDocs,
-  } from 'firebase/firestore'
-  import { getAuth } from 'firebase/auth'
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+} from 'firebase/firestore';
+import { getCurrentUid } from '../utils/authHelpers';
   
   const db = getFirestore()
   
-  export async function fetchFriendsFavorites() {
-    const currentUser = getAuth().currentUser
-    if (!currentUser) throw new Error('Not authenticated')
+  export async function fetchFriendsFavorites(): Promise<FriendFavorite[]> {
+    const uid = getCurrentUid();
+    if (!uid) throw new Error('Not authenticated')
   
-    const userRef = doc(db, 'users', currentUser.uid)
+    const userRef = doc(db, 'users', uid)
     const userSnap = await getDoc(userRef)
     if (!userSnap.exists()) return []
   
-    const friendUids = userSnap.data().friends || []
-    const allData = []
+    const friendUids: string[] = userSnap.data().friends || [];
+    const allData: FriendFavorite[] = [];
   
     for (const friendUid of friendUids) {
       const userDoc = await getDoc(doc(db, 'users', friendUid))

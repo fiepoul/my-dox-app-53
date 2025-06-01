@@ -1,4 +1,6 @@
-import type { Film, ScheduleBlock } from "@/types/filmTypes";
+import type { Film } from "@/types/filmTypes";
+import type { ScheduleBlock } from '@/types/scheduleTypes';
+
 import { Platform } from 'react-native';
 
 /**

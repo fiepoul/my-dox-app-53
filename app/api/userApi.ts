@@ -1,4 +1,4 @@
-import { getAuth } from 'firebase/auth'
+import type { UserPublic } from '@/types/userTypes'
 import {
   arrayRemove,
   arrayUnion,
@@ -11,77 +11,66 @@ import {
   updateDoc,
   where,
 } from 'firebase/firestore'
+import { getCurrentUid } from '../utils/authHelpers'
   
   const db = getFirestore()
   
-  export async function findUserByUsername(username: string) {
-    const q = query(collection(db, 'users'), where('username', '==', username))
-    const snapshot = await getDocs(q)
-    if (snapshot.empty) return null
-    const docSnap = snapshot.docs[0]
-    return { uid: docSnap.id, ...docSnap.data() }
-  }
+  export async function findUserByUsername(username: string): Promise<UserPublic | null> {
+  const q = query(collection(db, 'users'), where('username', '==', username));
+  const snapshot = await getDocs(q);
+  if (snapshot.empty) return null;
+
+  const docSnap = snapshot.docs[0];
+  const data = docSnap.data();
+
+  return {
+    uid: docSnap.id,
+    fullName: data.fullName ?? '',
+    username: data.username ?? '',
+  };
+}
   
-  export async function addFriendByUsername(username: string) {
-    const friend = await findUserByUsername(username)
-    if (!friend) throw new Error('User not found')
-    const currentUser = getAuth().currentUser
-    if (!currentUser) throw new Error('Not authenticated')
-  
-    if (friend.uid === currentUser.uid) {
-      throw new Error("You can't add yourself")
-    }
-  
-    const userRef = doc(db, 'users', currentUser.uid)
-    const friendRef = doc(db, 'users', friend.uid)
-  
-    // Friendship is mutual, so we add both users to each other's friends list
-    await updateDoc(userRef, {
-      friends: arrayUnion(friend.uid),
-    })
-  
-    await updateDoc(friendRef, {
-      friends: arrayUnion(currentUser.uid),
-    })
+  export async function addFriendByUsername(username: string): Promise<void> {
+  const friend = await findUserByUsername(username);
+  if (!friend) throw new Error('User not found');
+
+  const myUid = getCurrentUid();
+  if (friend.uid === myUid) {
+    throw new Error("You can't add yourself");
   }
 
-  export async function fetchCurrentUserData(): Promise<{
-    uid: string;
-    fullName: string;
-    username: string;
-  }> {
-    const currentUser = getAuth().currentUser;
-    if (!currentUser) throw new Error('Not authenticated');
+  const userRef = doc(db, 'users', myUid);
+  const friendRef = doc(db, 'users', friend.uid);
+
+  await Promise.all([
+    updateDoc(userRef, { friends: arrayUnion(friend.uid) }),
+    updateDoc(friendRef, { friends: arrayUnion(myUid) }),
+  ]);
+}
+
+  export async function fetchCurrentUserData(): Promise<UserPublic> {
+  const uid = getCurrentUid();
+  const userRef = doc(db, 'users', uid);
+  const userSnap = await getDoc(userRef);
+  if (!userSnap.exists()) throw new Error('User not found');
+
+  const data = userSnap.data();
+  return {
+    uid,
+    fullName: data.fullName ?? '',
+    username: data.username ?? '',
+  };
+}
   
-    const userRef = doc(db, 'users', currentUser.uid);
-    const userSnap = await getDoc(userRef);
   
-    if (!userSnap.exists()) throw new Error('User not found');
-  
-    const data = userSnap.data();
-  
-    return {
-      uid: currentUser.uid,
-      fullName: data.fullName ?? '',
-      username: data.username ?? '',
-    };
-  }
-  
-  
-  export async function removeFriend(uidToRemove: string) {
-    const currentUser = getAuth().currentUser
-    if (!currentUser) throw new Error('Not authenticated')
-  
-    const currentRef = doc(db, 'users', currentUser.uid)
-    const targetRef = doc(db, 'users', uidToRemove)
-  
-    // Fjern begge veje
-    await updateDoc(currentRef, {
-      friends: arrayRemove(uidToRemove),
-    })
-  
-    await updateDoc(targetRef, {
-      friends: arrayRemove(currentUser.uid),
-    })
-  }
+  export async function removeFriend(uidToRemove: string): Promise<void> {
+  const myUid = getCurrentUid();
+  const myRef = doc(db, 'users', myUid);
+  const theirRef = doc(db, 'users', uidToRemove);
+
+  await Promise.all([
+    updateDoc(myRef, { friends: arrayRemove(uidToRemove) }),
+    updateDoc(theirRef, { friends: arrayRemove(myUid) }),
+  ]);
+}
   

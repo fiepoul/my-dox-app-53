@@ -1,8 +1,9 @@
+import { useAuth } from '@/app/context/AuthContext';
 import { commonStyles } from '@/styles/CommonStyles';
 import type { Film } from '@/types/filmTypes';
 import { AntDesign } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   Animated,
   FlatList,
@@ -15,63 +16,38 @@ import {
   View
 } from 'react-native';
 import 'react-native-url-polyfill/auto';
-import { fetchFavorites } from '../api/DoxFavoritesApi';
-import { fetchDoxFilms } from '../api/DoxFilmApi';
-import { fetchFriendsFavorites } from '../api/friendsApi';
-import { fetchCurrentUserData } from '../api/userApi';
-
-type FriendFavorite = {
-  uid: string;
-  fullName: string;
-  username: string;
-  favorites: number[];
-};
+import { useAppData } from '../context/AppDataContext';
 
 export default function HomeScreen() {
+  const { user, initializing } = useAuth();
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const router = useRouter();
-  const [fullName, setFullName] = useState('Guest');
-  const [myFavorites, setMyFavorites] = useState<number[]>([]);
-  const [friendsFavorites, setFriendsFavorites] = useState<FriendFavorite[]>([]);
-  const [allFilms, setAllFilms] = useState<Film[]>([]);
+  const { fullName, myFavorites, friendsFavorites, allFilms, loading} = useAppData();
 
-  useEffect(() => {
-    Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 800,
-      useNativeDriver: true,
-    }).start();
+  // 🔁 Redirect hvis ikke logget ind
+useEffect(() => {
+  if (!initializing && !user) {
+    router.replace('/login');
+  }
+}, [initializing, user, router]);
 
-    const loadData = async () => {
-      console.log('[DEBUG] loadData start');
-      try {
-        console.log('[DEBUG] fetching current user data...');
-        const user = await fetchCurrentUserData();
-        console.log('[DEBUG] user loaded:', user.fullName);
-    
-        console.log('[DEBUG] fetching films...');
-        const films = await fetchDoxFilms();
-        console.log('[DEBUG] fetched films:', films.length);
-    
-        console.log('[DEBUG] fetching favorites...');
-        const favs = await fetchFavorites();
-        console.log('[DEBUG] fetched favorites:', favs.length);
-    
-        console.log('[DEBUG] fetching friends favorites...');
-        const friendsFavs = await fetchFriendsFavorites();
-        console.log('[DEBUG] fetched friends:', friendsFavs.length);
-    
-        setFullName(user.fullName || 'Guest');
-        setAllFilms(films);
-        setMyFavorites(favs.map(f => Number(f.id)).filter(id => !isNaN(id)));
-        setFriendsFavorites(friendsFavs);
-      } catch (err) {
-        console.error('[ERROR] loadData failed:', err);
-      }
-    };
+// 🎞️ Animation — kører kun én gang ved mount
+useEffect(() => {
+  Animated.timing(fadeAnim, {
+    toValue: 1,
+    duration: 800,
+    useNativeDriver: true,
+  }).start();
+}, []); 
 
-    loadData();
-  }, []);
+if (loading) {
+  return (
+    <SafeAreaView style={[commonStyles.container]}>
+      <Text>Loading...</Text>
+    </SafeAreaView>
+  );
+}
+
 
   const goToFavorite = () => router.push('/favorites');
   const goToFriends = () => router.push('/friends');

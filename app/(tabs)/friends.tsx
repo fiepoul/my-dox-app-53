@@ -1,9 +1,10 @@
 // This file shows the user's friends and their favorite films.
 import AddFriend from '@/components/addFriends';
+import SectionHeader from '@/components/SectionHeader';
 import { commonStyles } from '@/styles/CommonStyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
 import {
   FlatList,
   Platform,
@@ -14,42 +15,25 @@ import {
   Text,
   View,
 } from 'react-native';
-import { fetchDoxFilms } from '../api/DoxFilmApi';
-import { fetchFriendsFavorites } from '../api/friendsApi';
-import { removeFriend } from '../api/userApi';
+import { useAppData } from '../context/AppDataContext';
 
 const HEADER_OFFSET =
   Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 60 : 60
 
 export default function FriendsTab() {
   const router = useRouter()
-  const [friendFavs, setFriendFavs] = useState<any[]>([])
-  const [allFilms, setAllFilms] = useState<any[]>([])
-
-  // Load films + friends' favorites once
-  useEffect(() => {
-    let alive = true
-    ;(async () => {
-      const films = await fetchDoxFilms()
-      const favs = await fetchFriendsFavorites()
-      if (!alive) return
-      setAllFilms(films)
-      setFriendFavs(favs)
-    })()
-    return () => {
-      alive = false
-    }
-  }, [])
+  const { friendsFavorites, allFilms, refreshFriends, removeFriend, loading } = useAppData();
 
   // Remove a friend (mutual)
   const handleRemove = useCallback(
-    async (uid: string) => {
-      await removeFriend(uid)
-      const favs = await fetchFriendsFavorites()
-      setFriendFavs(favs)
-    },
-    []
-  )
+  async (uid: string) => {
+    await removeFriend(uid);
+    await refreshFriends(); 
+  },
+  [removeFriend, refreshFriends]
+);
+
+if (loading) return <Text>Loading...</Text>;
 
   // Helper: find a film title by its ID
   const findFilmTitle = (id: number) => {
@@ -60,7 +44,7 @@ export default function FriendsTab() {
   return (
     <SafeAreaView style={[commonStyles.container]}>
       <FlatList
-        data={friendFavs}
+        data={friendsFavorites}
         keyExtractor={(item, idx) => item.uid + idx}
         contentContainerStyle={[
           styles.list,
@@ -68,12 +52,10 @@ export default function FriendsTab() {
         ]}
         ListHeaderComponent={
           <View style={styles.headerBlock}>
-            <View style={styles.orangeShape} />
-            <View style={styles.accentStripe} />
-            <Text style={[commonStyles.headerMain]}>MY FRIENDS</Text>
-            <Text style={[commonStyles.headerSub]}>
-              WHY WATCH ALONE WHEN YOU CAN AUDITION A FRIEND?
-            </Text>
+            <SectionHeader
+              title="MY FRIENDS"
+              subtitle="WHY WATCH ALONE WHEN YOU CAN AUDITION A FRIEND?"
+            />
             <AddFriend promptText="tired of your friends' film taste?" />
           </View>
         }
@@ -131,24 +113,9 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     alignItems: 'center',
   },
-  orangeShape: {
-    width: 80,
-    height: 6,
-    backgroundColor: '#FF8C00',
-    marginBottom: 6,
-    transform: [{ rotate: '12deg' }],
-  },
-  accentStripe: {
-    width: 100,
-    height: 4,
-    backgroundColor: '#0047ff',
-    marginBottom: 8,
-    transform: [{ rotate: '-6deg' }],
-  },
   block: {
-    marginBottom: 12,        // tighter spacing
-    padding: 12,             // keep content padding
-    // border removed
+    marginBottom: 12,        
+    padding: 12,             
   },
 
   headerRow: {

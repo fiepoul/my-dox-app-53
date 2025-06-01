@@ -1,13 +1,11 @@
 import MeltedTitle from '@/components/MeltedTitle';
 import SurrealBackground from '@/components/SurrealBackground';
+import { useEmailLogin } from '@/hooks/useEmailLogin';
+import { useEmailSuggestions } from '@/hooks/useEmailSuggestions';
+import { useGoogleLogin } from '@/hooks/useGoogleLogin';
 import { commonStyles } from '@/styles/CommonStyles';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as Google from 'expo-auth-session/providers/google';
-import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
-import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
-import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Animated,
@@ -22,107 +20,45 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import { auth, db, googleProvider } from '../firebaseconfig/firebaseconfig';
 import { useSurrealAnime } from '../hooks/useSurrealAnime';
 
 export default function LoginScreen() {
   const router = useRouter();
   const { circAnim, rectAnim, meltAnim } = useSurrealAnime();
-  const [request, response, promptAsync] = Google.useAuthRequest({
-    androidClientId: "1000450722631-8ejmu5sjsndmte9vrsns0tmhr47h50dh.apps.googleusercontent.com",
-    iosClientId: "1000450722631-8ejmu5sjsndmte9vrsns0tmhr47h50dh.apps.googleusercontent.com",
-    clientId: "1000450722631-k92e2k75vjcoh0d2ddnk0ag296q5kore.apps.googleusercontent.com",
-  })
-
-  const handleGoogleLogin = async () => {
-    try {
-      const result = await signInWithPopup(auth, googleProvider);
-      const user = result.user;
-  
-      console.log("Logged in as:", user.email);
-  
-      const userDocRef = doc(db, 'users', user.uid);
-      const userSnap = await getDoc(userDocRef);
-  
-      if (!userSnap.exists()) {
-        // Create user document with same fields as email signup
-        await setDoc(userDocRef, {
-          fullName: user.displayName || '',
-          username: user.email?.split('@')[0] || 'user',
-          createdAt: serverTimestamp(),
-          friends: [],
-          // favorites is added as a subcollection automatically
-        });
-        console.log('Firestore profile created for Google user');
-      }
-  
-      // Go to home screen
-      router.replace('/');
-    } catch (err) {
-      console.error("Google login failed:", err);
-    }
-  };
-
-  useEffect (() => {
-    if(response?.type==="success")
-      console.log("Tilbage fra google" + response.authentication?.accessToken)
-  },[response])
+  const { handleEmailLogin, loading, error } = useEmailLogin();
+  const { signIn: handleGoogleLogin } = useGoogleLogin();
+  const { suggestions, updateSuggestions } = useEmailSuggestions();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   // Animations
   const formFade   = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-  AsyncStorage.getItem('previousEmails').then(stored => {
-    if (stored) setSuggestions(JSON.parse(stored));
-  });
-
   Animated.timing(formFade, {
     toValue: 1,
     duration: 600,
     useNativeDriver: true,
   }).start();
-}, []);
+  }, []);
 
   const handleLogin = async () => {
-    setError(null);
-    setLoading(true);
-    Keyboard.dismiss();
-  
-    try {
-      await signInWithEmailAndPassword(auth, email.trim(), password);
+  Keyboard.dismiss();
+  const success = await handleEmailLogin(email, password);
+  if (success) {
+    await updateSuggestions(email);
+    router.replace('/');
+  }
+};
 
-      const stored = await AsyncStorage.getItem('previousEmails');
-      const list = stored ? JSON.parse(stored) : [];
-      if (!list.includes(email.trim())) {
-        await AsyncStorage.setItem('previousEmails', JSON.stringify([email.trim(), ...list].slice(0, 5)));
-      }
-  
-      if (Platform.OS !== 'web') {
-        await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-      }
-  
-      router.replace('/');
-    } catch {
-      setError('Wrong email or password');
-  
-      if (Platform.OS !== 'web') {
-        await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const filtered = suggestions.filter(e =>
+const filtered = useMemo(() =>
+  suggestions.filter(e =>
     e.toLowerCase().startsWith(email.toLowerCase()) && email.length > 0
-  );
+  ),
+  [suggestions, email]
+);
 
   return (
     <KeyboardAvoidingView
