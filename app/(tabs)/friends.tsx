@@ -15,7 +15,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { useAppData } from '../context/AppDataContext';
+import { useAppData } from '../../context/AppDataContext';
 
 const HEADER_OFFSET =
   Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 60 : 60

@@ -1,12 +1,12 @@
-import { addFriendByUsername } from '@/app/api/userApi'
+import { addFriendByUsername } from '@/api/userApi'
 import React, { useState } from 'react'
 import {
-  Keyboard,
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
+    Keyboard,
+    Pressable,
+    StyleSheet,
+    Text,
+    TextInput,
+    View,
 } from 'react-native'
 
 interface AddFriendProps {

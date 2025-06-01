@@ -1,4 +1,4 @@
-import { useAuth } from '@/app/context/AuthContext';
+import { useAuth } from '@/context/AuthContext';
 import { commonStyles } from '@/styles/CommonStyles';
 import type { Film } from '@/types/filmTypes';
 import { AntDesign } from '@expo/vector-icons';
@@ -16,7 +16,7 @@ import {
   View
 } from 'react-native';
 import 'react-native-url-polyfill/auto';
-import { useAppData } from '../context/AppDataContext';
+import { useAppData } from '../../context/AppDataContext';
 
 export default function HomeScreen() {
   const { user, initializing } = useAuth();

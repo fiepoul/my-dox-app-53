@@ -15,8 +15,8 @@ import {
   Text,
   View,
 } from 'react-native';
-import { removeFavorite } from '../api/DoxFavoritesApi';
-import { useAppData } from '../context/AppDataContext';
+import { removeFavorite } from '../../api/DoxFavoritesApi';
+import { useAppData } from '../../context/AppDataContext';
 
 const HEADER_OFFSET =
   Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 60 : 60;

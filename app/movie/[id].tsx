@@ -1,4 +1,4 @@
-import { fetchDoxFilms } from '@/app/api/DoxFilmApi';
+import { fetchDoxFilms } from '@/api/DoxFilmApi';
 import type { Film } from '@/types/filmTypes';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
@@ -137,9 +137,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#000',
     transform: [{ rotate: '-3deg' }],
-    textShadowColor: 'rgba(0,0,0,0.1)',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 4,
     paddingHorizontal: 32,
     lineHeight: 36,
   },

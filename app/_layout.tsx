@@ -1,4 +1,4 @@
-import { AuthProvider } from '@/app/context/AuthContext';
+import { AuthProvider } from '@/context/AuthContext';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
@@ -7,7 +7,7 @@ import { StatusBar } from 'expo-status-bar';
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import 'react-native-url-polyfill/auto';
-import { AppDataProvider } from './context/AppDataContext';
+import { AppDataProvider } from '../context/AppDataContext';
 WebBrowser.maybeCompleteAuthSession();
 
 SplashScreen.preventAutoHideAsync();

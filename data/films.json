@@ -1,0 +1,1337 @@
+[
+  {
+    "id": 1,
+    "title": "I am everything",
+    "tagline": "An artificial intelligence develops self-awareness and reflects on humanity's moral codes and social structures.",
+    "description" : "Using art history and the internet’s infinite image archive as building blocks, Jeppe Lange (‘Abyss’, CPH:DOX 2022) has created a thought-provoking and subtly funny work in which a (fictional) artificial intelligence developing self-awareness looks at humanity’s moral limitations with a new perspective. Just as the spectra of light and sound extend beyond human perception, the AI discovers a mental spectrum far greater than any individual mind can comprehend, creating an unprecedented connection between technology and nature’s hidden patterns.",
+    "director": "Jeppe Lange",
+    "duration": 120,
+    "posterUrl": "https://example.com/poster1.jpg",
+    "schedules": [
+      { "date": "2025-05-05", "time": "10:00 - 11:30", "cinema": "Empire Bio" },
+      { "date": "2025-05-06", "time": "10:00 - 11:30", "cinema": "Grand Teatret" },
+      { "date": "2025-05-07", "time": "10:00 - 11:30", "cinema": "Cinemateket" }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "50 Meters",
+    "tagline": "Deeply charming Egyptian debut from an outswimming pool in Cario where an adult daughter's relationship with her good-natured father is universally recognizable about life's big questions.",
+    "description": "Yomna is struggling to get her first movie made. It’s not easy to find your own means of expression without the right protagonist. And this is where her good-natured father literally enters the picture. He is an elderly gentleman, but he is young at heart and has many friends with whom he spends his time around an outdoor swimming pool in the middle of Cairo. Yomna turns the camera on her father, and soon her film takes shape before our very eyes. Although her father is a great guy, he may not have been so good at opening his heart to Yomna about the deeper questions of life. ’50 Meters’ is a deceptively simple film that is not afraid to swim in the deep end, and takes its ‘less is more’ philosophy to a whole new level of ‘more’. You will be looking forward to see Yomna Khattab’s next film before her debut is even over.",
+    "director": "Yomna Khattab",
+    "duration": 72,
+    "posterUrl": "https://example.com/poster2.jpg",
+    "schedules": [
+      { "date": "2025-05-05", "time": "12:00 - 13:45", "cinema": "Empire Bio" },
+      { "date": "2025-05-06", "time": "12:00 - 13:45", "cinema": "Grand Teatret" },
+      { "date": "2025-05-07", "time": "12:00 - 13:45", "cinema": "Cinemateket" }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "2000 Meters to Andriivka",
+    "tagline": "An Oscar-winning Ukrainian director's unflinching film from the frontline, where a small group of soldiers fight their way two kilometers through a harsh landscape to liberate a village in ruins.",
+    "description": "With barely a hundred inhabitants, the village of Andriivka is a dot on the map. But the town is strategically important, and when Russia invades Ukraine, a group of soldiers are tasked with liberating the town. From their position two kilometers away, they must fight their way through a harsh landscape under constant attack to reach and liberate the village from the occupying forces. \nOscar-winning director Mstyslav Chernov (’20 Days in Mariupol’, CPH:DOX 2023) is with them. ‘2000 Meters to Andriivka’ shows us a slice of the war in every detail. From the command center to the battlefield (shot with cameras mounted on the soldiers’ helmets), and to the burial of the dead. \n\nChernov’s film ranks among the most important (anti-)war films in history and is not blind to the desperation and hopelessness that is the tragic and chilling reality of any war. The film won the Directing",
+    "director": "Mstyslav Chernov ",
+    "duration": 107,
+    "posterUrl": "https://example.com/poster3.jpg",
+    "schedules": [
+      { "date": "2025-05-05", "time": "14:00 - 15:30", "cinema": "Empire Bio" },
+      { "date": "2025-05-06", "time": "14:00 - 15:30", "cinema": "Grand Teatret" },
+      { "date": "2025-05-07", "time": "14:00 - 15:30", "cinema": "Cinemateket" }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "9-Month Contract",
+    "tagline": "Ni måneders graviditet for 14.000 dollars? Et mangeårigt venskab mellem instruktør og hovedperson udvikler sig til en film om (ruge)moderskab og værdighed i en ureguleret industri i Tbilisi.",
+    "description": "For den enlige, georgiske mor Zhana er surrogatmoderskab den eneste mulighed for at give sin teenagedatter Elene et bedre og mere værdigt liv. Hun har ingen uddannelse, et job som kassedame i det lokale supermarked, og så er hun vokset op et sted mellem børnehjemmet og gaden i Tbilisi. I desperation lejer hun sin livmoder ud til udenlandske, barnløse par. 14.000 dollars for ni måneders graviditet. Beløbet, der i første omgang virker stort, slipper hurtigt op, og før hun ved af det, sidder hun fast i en ond spiral. Fra graviditet til graviditet forværres hendes helbred. Zhana prøver at holde sin voksende mave skjult for sin datter, men Elene vokser sig også større og klogere, og hvad sker der, når hun gennemskuer sin mor? Frygten for fattigdom og arbejdet som rugemor presser hendes aldrende krop til det yderste.\n\nKetevan Vashagashvili har skildret forholdet mellem mor og datter med tillid og nærvær gennem mange år, og skabt en uafrystelig film om en kvindes kærlighed til sin datter – og om det system, der står klar til at udnytte den.",
+    "director": "Ketevan Vashagashvili ",
+    "duration": 79,
+    "posterUrl": "https://example.com/poster4.jpg",
+    "schedules": [
+      { "date": "2025-05-05", "time": "16:00 - 17:30", "cinema": "Empire Bio" },
+      { "date": "2025-05-06", "time": "16:00 - 17:30", "cinema": "Grand Teatret" },
+      { "date": "2025-05-07", "time": "16:00 - 17:30", "cinema": "Cinemateket" }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "À demain sur la Lune",
+    "tagline": "An ordinary woman finds hope and an unexpected friend in her last months on Earth. A sensual film about life and death, where gratitude gets the last word.",
+    "description": "On the outskirts of a small town, a figure rides calmly through the forest on a horse that lights up in the twilight like a dream vision from another world. A motif that, in its quietly poetic power, says a lot about this warm, wise and deeply moving film. We are in Calais on the north coast of France. 39-year-old Amandine lives here with her husband and two young sons. A family like so many others – if only Amandine wasn’t terminally ill and had only a few months left to live. \n\nNow she is preparing herself and her family for what is to come. Still, Amandine is full of life and gratitude. Both for the time that has passed and the time she still has left. Scenes from her life in the hospital and at home paint a sensual and unsentimental picture of a singular human being. \n\nAnd the horse? It is actually employed at the hospital where it creates calm and presence, and where it can supposedly sense when a life is coming to an end. But as one of the hospital’s other patients says: ‘À demain sur la lune!’ – see you tomorrow on the moon.",
+    "director": "Thomas Balmès",
+    "duration": 80,
+    "posterUrl": "https://example.com/poster5.jpg",
+    "schedules": [
+      { "date": "2025-05-05", "time": "10:00 - 11:30", "cinema": "Empire Bio" },
+      { "date": "2025-05-06", "time": "10:00 - 11:30", "cinema": "Grand Teatret" },
+      { "date": "2025-05-07", "time": "10:00 - 11:30", "cinema": "Cinemateket" }
+    ]
+  },
+    {
+      "id": 6,
+      "title": "A Family",
+      "country": "France",
+      "tagline": "Controversial and confrontational film debut from French author Christine Angot who confronts past abuse and the family that covered it up. A merciless film with a belligerent willpower.",
+      "description": "Christine Angot is recognised as one of the most important French writers of our time. She is also one of the most controversial – and her debut as a filmmaker does not change that fact. Once again, Angot takes the unwilling lead role in her own painful story of surviving sexual abuse from her father. The father is dead, but nothing is forgotten or forgiven. And now it’s time to confront those who did nothing to stop him. In a transgressive move, she visits distant family members with camera in hand to finally provoke reactions and responses. It is a method of conflict that turns everything you might think about documentary ethics on its head, but Angot does not spare herself either. As in her books, the honesty and vulnerability is so intense that you feel it in your own body. An unforgettable film from a woman with words as her weapon of choice.",
+      "director": "Christine Angot",
+      "duration": 82,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-01",
+          "time": "10:00 - 11:30",
+          "cinema": "Palads"
+        },
+        {
+          "date": "2025-05-02",
+          "time": "12:00 - 13:30",
+          "cinema": "Cinemateket"
+        },
+        {
+          "date": "2025-05-03",
+          "time": "14:00 - 15:30",
+          "cinema": "Gloria Biograf"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "A Sisters’ Tale",
+      "year": 2024,
+      "tagline": "An Iranian housewife dreams of becoming a singer, but her husband and the regime say no. But it takes more than that to stop her in a genuine festival hit, filmed over seven years by her own sister.",
+      "description": "Nasreen lives a quiet life as a housewife in Tehran. Trapped in an arranged and unhappy marriage to an absent and conservative husband, she takes care of their two children. But her dreams extend far beyond the four walls of her home. What happens when a woman challenges the norms of a patriarchal society to follow her passion?\n\nNasreen decides to fulfill her lifelong dream of becoming a singer – and fight for her voice, both literally and symbolically. But she must do so in secret, as both her husband and the regime forbid her to sing. Her sister, filmmaker Leila Amini, has followed her closely with her camera for seven years. The result is a powerful and honest film filled with raw scenes – from hidden studio recordings to marital conflict.\n\nA Sisters’ Tale is the story of two empowered women who fight for the power of art and the right to independence in a system that oppresses women. Portrayed with an intimacy and tenderness that only exists between sisters.",
+      "director": "Leila Amini",
+      "duration": 94,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-02",
+          "time": "10:00 - 11:30",
+          "cinema": "Dagmar"
+        },
+        {
+          "date": "2025-05-03",
+          "time": "12:00 - 13:30",
+          "cinema": "Empire Bio"
+        },
+        {
+          "date": "2025-05-04",
+          "time": "14:00 - 15:30",
+          "cinema": "Vester Vov Vov"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "A stranger in the world",
+      "tagline": "A filmmaker and his son with autism. A composer and his musical work inspired by the slow processes of dripstone caves. Two parallel love stories.",
+      "country":"Norway",
+      "year": 2024,
+      "description": "Composer Magnar Åm wanders through a stalactite cave deep underground to compose a musical work. Once a week, one drop falls from the stalactite at the top onto the stalagmite at the bottom. Slowly, perhaps over millions of years, they grow together. From this time perspective, human life is mercifully short – but maybe you can still see life in the drop? \n\nDirector Sturla Pilskog finds it difficult to understand the reality in which his son, who has autism, lives and acts. Through fragmented memories of his son’s challenged sensory life, he tries to find some kind of pattern. With the composer as a philosophical guide, the director tries to find a way to the center of the drop and in many ways find harmony in life. \n\nIn the encounter with the composer’s sensory world and his son’s autism, Pilskog has created a touching and artistic documentary – or rather, a journey of natural philosophy – about distance and closeness between people.",
+      "director": "Sturla Pilskog",
+      "duration": 30,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-03",
+          "time": "10:00 - 11:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-04",
+          "time": "12:00 - 13:30",
+          "cinema": "Palads"
+        },
+        {
+          "date": "2025-05-05",
+          "time": "14:00 - 15:30",
+          "cinema": "Empire Bio"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Abode of Dawn",
+      "country":"Germany",
+      "year": 2024,
+      "tagline": "10 years in a Christian cult in the Siberian wilderness, where a growing following has realized the vision of a self-proclaimed prophet. A sensational debut.",
+      "description": "In the wild 90s after the collapse of the Soviet Union, a slew of Christian preachers emerged, all proclaiming themselves the Son of God. One of them was a traffic cop and painter who took the name Vissarion. In 1995, he founded One Family in the far reaches of Siberia. Here he still lives with his faithful disciples, in a utopian parallel society in harmony with nature and the guidelines he sets out. And here Kristina Shtubert has followed his disciples for 10 years in her sensational debut.\n\nWe meet the young German woman who married a short-tempered Russian man she never loved. The teenage girl who leaves the village for the city where she ends up in a severe drug addiction. The older woman who blindly follows Vissarion’s every word. And in an unforgettable scene, we finally meet the man himself.\n\nWithout judgement, Shtubert depicts life in the tajga. From the budding green gardens and playful children, to the white-clad ceremonies with round, shapely sacrificial bread, until three helicopters arrive and transform the tranquil wilderness community into an action film.",
+      "director": "Kristina Shtubert",
+      "duration":  105,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-04",
+          "time": "10:00 - 11:30",
+          "cinema": "Dagmar"
+        },
+        {
+          "date": "2025-05-05",
+          "time": "12:00 - 13:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-06",
+          "time": "14:00 - 15:30",
+          "cinema": "Park Bio"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "About a Hero",
+      "tagline": "A hallucinatory crime mystery where an AI version of legendary filmmaker Werner Herzog must solve a suspicious death - all based on a script written by an AI.",
+      "country":"Denmark",
+      "year": 2024,
+      "description": "Legendary German filmmaker Werner Herzog has created some of the most incredible films in cinema history across documentary and fiction. So what happens if you ask an AI to ‘watch’ all his movies and write a script that Herzog himself could have conceived? The answer is: ‘About a Hero’. A film adaptation of an AI-generated script inspired by Herzog’s own work. \n\nWhen factory worker Dorem Clery dies under mysterious circumstances in Getunkirchenburg, ‘Herzog’ travels to the town to investigate. Some moments are so absurd that only the real Herzog could have come up with them. From a non-verbal witness statement to a sex scene with a toaster. \n\nIn between, artists, philosophers and scientists reflect on the concepts of originality and authenticity in the modern age. Werner Herzog once said that a machine will not be able to make a movie as good as his own for the next 4,500 years. Perhaps he already has to eat his own words?",
+      "director": "Piotr Winiewicz",
+      "duration": 84,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-05",
+          "time": "10:00 - 11:30",
+          "cinema": "Vester Vov Vov"
+        },
+        {
+          "date": "2025-05-06",
+          "time": "12:00 - 13:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-07",
+          "time": "14:00 - 15:30",
+          "cinema": "Gloria Biograf"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Afternoons of Solitude",
+      "tagline": "A controversial masterpiece from Catalan auteur Albert Serra that analyses the masculine death cult known as bullfighting with few words and seemingly simple means.",
+      "country": "Spain, France & Portugal",
+      "year": 2024,
+      "description": "The camera remains on the extremely charismatic young bullfighter Andrés Roca Rey for every minute of Albert Serra’s uncompromising, provocative and masterful film about the disgusting display of aestheticised cruelty called bullfighting. We are with the young matador in the arena, in the car before and after the fights, and in the luxury hotel where he dons the feminine garments soon to be soiled and torn apart. Rey is surrounded by a wall of male assistants, and Serra’s film offers a sublime – and transgressive – insight into the masculine death cult surrounding the young superstar. Rey is a ballet dancer with a pout and a sword hidden on his back. A young dandy, complete in his arrogance, honoured by the cheers of the audience under a burning sun. ‘Afternoons of Solitude’ is a work that leaves you to judge for yourself what you see.",
+      "director": "Albert Serra",
+      "duration": 125,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-06",
+          "time": "10:00 - 11:30",
+          "cinema": "Park Bio"
+        },
+        {
+          "date": "2025-05-07",
+          "time": "12:00 - 13:30",
+          "cinema": "Vester Vov Vov"
+        },
+        {
+          "date": "2025-05-08",
+          "time": "14:00 - 15:30",
+          "cinema": "Grand Teatret"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Agatha’s Almanac",
+      "tagline": "Defying modernity, 90-year-old Agatha forges a solitary existence on her ancestral farm preserving heirloom seeds. A film from a vanishing world, immersing us in a handmade universe.",
+      "country":"Canada",
+      "year": 2025,
+      "description": "The sun shines through a sealed jar of berries. An envelope of seeds marked with neat handwriting. The quiet drama of the changing seasons. ‘Agatha’s Almanac’ is a sensuous and cinematic portrait of 90-year-old Agatha who defies modernity and capitalism in favor of a simple, self-sufficient life on her ancestral farm. \n\nHere she tends her land and grows heirloom seeds that have been passed down for generations. Watermelons, beans, flowers, herbs and vegetables – her large garden provides her with everything she needs. The farm looks like it did in the 1950s and is in every way off the grid. Artist Amalie Atkins has created her portrait by hand in the spirit of her 90-year-old aunt: ‘Agatha’s Almanac’ was crafted on analog 16mm film over six years with a small all-female crew. \n\nJust as there is no modern technology in Agatha’s life, there are no modern political slogans to shout along to. It’s all action and consequence in one of the most uncompromisingly feminist films of the year. The fact that it’s also one of the most beautiful only testifies to how closely the two things are connected.",
+      "director": "Amalie Atkins",
+      "duration": 87,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-07",
+          "time": "10:00 - 11:30",
+          "cinema": "Dagmar"
+        },
+        {
+          "date": "2025-05-08",
+          "time": "12:00 - 13:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-09",
+          "time": "14:00 - 15:30",
+          "cinema": "Cinemateket"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "category": "Exhibition",
+      "title": "Aggregate",
+      "tagline": "If an artificial intelligence were to learn to desire, what path would it take to bridge the space between intimacies? Aggregate is a collective process requiring a large number of players to take turns and experience reinforcement learning (punishment/reward) as they progress through the uncharted territory of machine learning and queer desire.",
+      "country":"France",
+      "year": 2024,
+      "description": "In the heart of a vast thicket strewn with electrical pylons and abandoned structures, the AI carves a network of aggregated desire lines through its arduous path, hoping that, in its next run, it might reach the object of its longing, held captive in a sightless fortress.\nIt stumbles, collapses, and begins again, learning a little more with each attempt.",
+      "director": "Distraction",
+      "duration": 1440,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-08",
+          "time": "10:00 - 11:30",
+          "cinema": "Empire Bio"
+        },
+        {
+          "date": "2025-05-09",
+          "time": "12:00 - 13:30",
+          "cinema": "Vester Vov Vov"
+        },
+        {
+          "date": "2025-05-10",
+          "time": "14:00 - 15:30",
+          "cinema": "Vester Vov Vov"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Ai Weiwei’s Turandot",
+      "tagline": "Ai Weiwei makes his debut as an opera director with an interpretation of Puccini's 'Turandot' in Rome's Opera House. The classic and controversial opera has a lot to say about our own time.",
+      "country":"taly & United States",
+      "year": 2025,
+      "description": "Does an almost 100-year-old opera still have something to say about our own time? Chinese artist Ai Weiwei explores the question in his directorial debut as an opera director, with a radical reinterpretation of Puccini’s masterpiece ‘Turandot’ at the beautiful and classic Teatro dell’Opera in Rome. \n\nSet in a mythical past in Beijing, the opera is both beloved and controversial – accused of exoticism, racist stereotypes and banned from being performed in China. Perhaps that’s why Ai Weiwei chose to take it on. \n\nWith his artistic vision, he uses Turandot to reflect today’s global crises – from the war in Ukraine to refugee flows and pandemic. Maxim Derevianko’s film follows the Chinese artist’s creative process and shows how classical art can still provoke, challenge and perhaps even change our times.",
+      "director": "Maxim Derevianko",
+      "duration": 77,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-09",
+          "time": "10:00 - 11:30",
+          "cinema": "Cinemateket"
+        },
+        {
+          "date": "2025-05-10",
+          "time": "12:00 - 13:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-11",
+          "time": "14:00 - 15:30",
+          "cinema": "Dagmar"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "All These Summers",
+      "tagline": "What kind of presence is made possible by the cinematic encounter? With the camera as an intermediary, an artist punches a hole in the wall that separates her responsibilities as a filmmaker from her role as a daughter.",
+      "country":"United Kingdom & Denmark",
+      "year": 2025,
+      "description": "With an open approach and without a clearly defined intention, filmmaker Therese Henningsen explores her relationship with two men in her immediate vicinity: Her neighbor Pete in London and her father in Denmark. \n\nAs time passes, the attention elicits a response from both of them. The camera changes every situation. A cinematic dilemma that Henningsen makes part of her practice. With a handheld camera and an unwavering gaze, Henningsen opens up a relational method that raises a number of complex questions. What presence can a cinematic encounter make possible? How does the cinematic relationship affect experiences of loneliness and isolation? \n\nWhen her father is diagnosed with cancer and slips back into the depression that made him absent when she was a teenager, the situation paves the way for a reflection on their relationship as daughter and father, and as filmmaker and subject.",
+      "director": "Therese Henningsen ",
+      "duration": 66,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-10",
+          "time": "10:00 - 11:30",
+          "cinema": "Dagmar"
+        },
+        {
+          "date": "2025-05-11",
+          "time": "12:00 - 13:30",
+          "cinema": "Park Bio"
+        },
+        {
+          "date": "2025-05-12",
+          "time": "14:00 - 15:30",
+          "cinema": "Vester Vov Vov"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "category": "World Premiere",
+      "title": "Always",
+      "tagline": "A Chinese boy discovers the power of poetry in a picturesque and magical film from a mountain village. A striking debut of great beauty.",
+      "country": "United States, France & China",
+      "year": 2025,
+      "description": "Deep in the lush mountains of Hunan province, Youbin lives with his father and two grandparents. He is 8 years old and he is a poet. The family is poor and lives on what they can grow. But at the village school, the children are taught Chinese poetry, and Youbin discovers the magical power of language to describe one’s feelings and place in the world. \n\nOut in the mountains, you are close to the earth, surrounded by nature. But Youbin’s heart is lonely. His mother ran away when he was three months old and his father lost one of his arms in an accident. Debut filmmaker Deming Chen describes Youbin’s formative journey in beautiful black and white images, allowing Youbin’s poems to fill the screen in all their calligraphic beauty. \n\nWhere Youbin expresses himself in few and well-chosen words, ‘Always’ creates a cinematic universe around him that is both adventurous and realistic. But as time passes, Youbin grows up and becomes a young man who must face reality and the future. One of the most remarkable debuts in recent years from a filmmaker with a fully formed artistic vision.",
+      "director": "Deming Chen",
+      "duration": 88,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-01",
+          "time": "10:00 - 11:30",
+          "cinema": "Park Bio"
+        },
+        {
+          "date": "2025-05-02",
+          "time": "12:00 - 13:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-03",
+          "time": "14:00 - 15:30",
+          "cinema": "Cinemateket"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "category": "World Premiere",
+      "title": "Animality",
+      "tagline": "Ai Weiwei examines our relationship with animals, from China and Egypt to the Danish mink farms. At times violent, always thought-provoking - and above all, a mirror image of ourselves.",
+      "country": "China",
+      "year": 2025,
+      "description": "In China, men in uniforms kill street dogs with long sticks and turn donkeys into candy. In Myanmar, elephants drag heavy logs through the jungle, but soon there is not enough work for the many working elephants. In Egypt, they tie the camels’ legs together to make them behave. In the Lofoten Islands, they fish and fillet fish in a hurry. In Brazil, a rancher dreams of more cattle, even though most of the deforestation in the Amazon is caused by agriculture. In Indonesia, they hunt whales with harpoons. In Mongolia, tourists can have their picture taken with a wolf. And in Denmark, mink are kept in small cages until one day during the covid pandemic, the Prime Minister calls for them all to be killed. \n\nWithout judgment, artist and filmmaker Ai Weiwei takes us around the globe in a reflection on our multifaceted relationship with the world’s animals. Observant and calm and without judgment, ‘Animality’ paints a sometimes violent but always thought-provoking picture of our collective relationship with the rest of the living world.",
+      "director": "Weiwei Ai ",
+      "duration": 122,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-03",
+          "time": "10:00 - 11:30",
+          "cinema": "Vester Vov Vov"
+        },
+        {
+          "date": "2025-05-04",
+          "time": "12:00 - 13:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-05",
+          "time": "14:00 - 15:30",
+          "cinema": "Empire Bio"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "category": "World Premiere",
+      "title": "Another World",
+      "tagline": "The mind behind the underground film hit 'The Great Glitch' is back with a new, unbridled series that takes us on a galloping journey through the great rabbit hole of the internet.",
+      "country": "Denmark",
+      "year": 2025,
+      "description": "Director Søren Peter Langkjær Bojsen’s dreams are like an endless scrolling stream of social media reels. Technology is swallowing him up. To rediscover a more human and hopeful side of the internet, he embarks on a digital pilgrimage.\n\nOn an anarchic Minecraft server, chaos reigns. Building and destroying without rules. In a closed furry community, identity is explored in new ways. And in the depths of advanced AI models lies a terrifying yet alluring shadowland of future possibilities. Each destination reveals new ways of being online – and new questions about what kind of digital world we really want to live in.\n\nAlong the way, we meet philosophers, hackers and cultural theorists who map this virtual jungle. ‘Another World’ is a thought-provoking and visually hypnotic journey into the unknown territories of the internet and a search for an alternative to the algorithm-driven noise.\n\nAt the premiere, the first two episodes of the series will be screened, while the rest will later be released on YouTube.",
+      "director": "Søren Peter Langkjær Bojsen",
+      "duration": 45,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-04",
+          "time": "10:00 - 11:30",
+          "cinema": "Dagmar"
+        },
+        {
+          "date": "2025-05-05",
+          "time": "12:00 - 13:30",
+          "cinema": "Palads"
+        },
+        {
+          "date": "2025-05-06",
+          "time": "14:00 - 15:30",
+          "cinema": "Cinemateket"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "category": "World Premiere",
+      "title": "Antidote",
+      "tagline": "Whistleblower and Bellingcat journalist Christo Grozev and his deadly fight against the Russian government. Premiering in a new version.",
+      "country": "United Kingdom",
+      "year": 2025,
+      "description": "A team of assassins traveling the globe poisoning opposition politicians and other threats to the Russian government – it sounds almost too far-fetched to be true. But that is what investigative journalist Christo Grozev uncovered with his online network Bellingcat. The crimes of the Russian government have cost several people – such as Alexei Navalny – their lives.\n\nThe problem with the revelation is that Grozev is now being persecuted himself. So much so that one day in New York, the exiled journalist receives a text message saying that if he so much as sets foot on European soil again, his life will be in imminent danger. \n\n‘Antidote’ is a docu-thriller and a thrilling portrait of an uncompromising man with incredible moral integrity, but it is also not blind to the enormous consequences of messing with Vladimir Putin. ‘Antidote’ premieres in a new version with an updated ending at CPH:DOX.\n\n",
+      "director": "James Jones",
+      "duration": 95,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-05",
+          "time": "10:00 - 11:30",
+          "cinema": "Palads"
+        },
+        {
+          "date": "2025-05-06",
+          "time": "12:00 - 13:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-07",
+          "time": "14:00 - 15:30",
+          "cinema": "Palads"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "category": "",
+      "title": "Apocalypse in the Tropics",
+      "tagline": "Five years after her Academy-Award nominated ‘The Edge of Democracy’, Petra Costa dives into Brazil’s political inferno, brilliantly exposing the apocalyptical clash between religion and democracy.",
+      "country": "Brazil",
+      "year": 2024,
+      "description": "As democracies around the world fight dark forces, Brazilian filmmaker Petra Costa plunges into the infernal flames of her country’s politics, searching for a sign of light. What she uncovers is the growing influence of apocalyptic theology and the resurgence of obscurantism. \n\nInfiltrating the system with the skill of a seasoned journalist, she gains access to Brazil’s top leaders: President Lula, former President Bolsonaro, and Pastor Malafaia – an influential televangelist and a puppet master to the far right, preaching the Bible as the sole legitimate Constitution.\n\n‘The worse it gets on Earth, the faster Jesus returns’, Malafaia and his fanatical apostles prophesize. Costa’s camera scrutinizes the details of Renaissance paintings depicting the burning souls of the Apocalypse. Weaving together past and present, she illuminates the contradictory realities of a young democracy hanging by a thread, while holding up a mirror to the rest of the world.",
+      "director": "Petra Costa",
+      "duration": 110,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-06",
+          "time": "10:00 - 11:30",
+          "cinema": "Palads"
+        },
+        {
+          "date": "2025-05-07",
+          "time": "12:00 - 13:30",
+          "cinema": "Palads"
+        },
+        {
+          "date": "2025-05-08",
+          "time": "14:00 - 15:30",
+          "cinema": "Cinemateket"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "category": "World Premiere",
+      "title": "Azza",
+      "tagline": "An existential road movie from Saudi Arabia where a brave woman is determined to create a life on her own terms. A close friendship with a filmmaker opens the door to new horizons.",
+      "country": "Germany & Saudi Arabia",
+      "year": 2025,
+      "description": "You don’t see much of life in Saudi Arabia on the big screen. But here is a film that brings images and stories to life in the Middle Eastern country. Through her intimate friendship with filmmaker Stefanie Brockhaus, we meet Azza – a brave and rebellious Saudi woman who was denied an education due to an oppressive patriarchal system, but follows her dreams of freedom at all costs.\n\nDetermined to make her own money, Azza teaches other women as a freelance driving instructor. Behind the wheel of her big black Toyota, she feels safe, proud – and free. She speeds down the country’s roads and highways. From the city to the endless desert, nothing can stop her.\n\nWhen her husband allows her to travel for a few days with the film crew, Azza discovers for the first time the beauty and possibilities that nature in her country has to offer, and a true sense of belonging. ‘Azza’ is the moving story of one woman’s liberation and in inspiring (driving) lesson in how to break free when life tries to put a spoke in the wheel.",
+      "director": "Stefanie Brockhaus ",
+      "duration": 87,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-07",
+          "time": "10:00 - 11:30",
+          "cinema": "Vester Vov Vov"
+        },
+        {
+          "date": "2025-05-08",
+          "time": "12:00 - 13:30",
+          "cinema": "Dagmar"
+        },
+        {
+          "date": "2025-05-09",
+          "time": "14:00 - 15:30",
+          "cinema": "Empire Bio"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "category": "World Premiere",
+      "title": "Balane 3",
+      "tagline": "A snapshot of life as a young African right now in a lively and chatty film from a town on the coast of Mozambique.",
+      "country": "Portugal & France",
+      "year": 2025,
+      "description": "There is a lot of talking in ‘Balane 3’. About politics, friendships, love and sex – and sex especially. We are in Inhambane, a medium-sized city in the south of Mozambique. Here we meet the young inhabitants in their own element. They work, hang out, go out dancing – and then they talk. \n\n‘Balane 3’ is a social film. A panoramic snapshot of life as a young African right now, in this particular place (the film is named after the neighborhood where it was shot). In other words, there’s a lot going on, and Ico Costa’s spinning analog camera is always at eye level with the young participants.\n\nCosta has made a number of films in Mozambique across documentary and fiction, about and with the country’s young generation, and has developed a method based on co-creation, relationships and trust, where all participants actively contribute – not just to tell their own story, but to transcend the narrative itself.",
+      "director": "Ico Costa",
+      "duration": 98,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-08",
+          "time": "10:00 - 11:30",
+          "cinema": "Dagmar"
+        },
+        {
+          "date": "2025-05-09",
+          "time": "12:00 - 13:30",
+          "cinema": "Palads"
+        },
+        {
+          "date": "2025-05-10",
+          "time": "14:00 - 15:30",
+          "cinema": "Vester Vov Vov"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "category": "",
+      "title": "Becoming Madonna",
+      "tagline": "Pop lovers unite! The story of ‘the material girl's stratospheric leap to fame is told in riveting fashion through unseen and unheard archive clips and interviews.",
+      "country": "United Kingdom & United States ",
+      "year": 2024,
+      "description": "",
+      "director": "Michael Ogden",
+      "duration": 90,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-09",
+          "time": "10:00 - 11:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-10",
+          "time": "12:00 - 13:30",
+          "cinema": "Park Bio"
+        },
+        {
+          "date": "2025-05-11",
+          "time": "14:00 - 15:30",
+          "cinema": "Palads"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "category": "Culture",
+      "title": "Birthdays + In Search of the Miraculous + The House + Europe Endless",
+      "tagline": "",
+      "country": "Denmark, Estonia & Sweden",
+      "year": null,
+      "description": "Adrian Jalily’s ‘Birthdays’ is a short hybrid film about Bruno, who is not invited to a birthday party with either the boys or the girls in his class.\n\nSybilla Tuxen’s ‘In Search of the Miraculous’ is a film about the power of imagination, where two people and two worldviews collide in a small shed on the edge of the world.\n\nCarl Olsson’s ‘The House’ is a warm observation of life in a modern human microcosm – a nine-story apartment building where the residents have created their own universes.\n\nThomas Elley’s ‘Europe Endless’ is about the life of a Bulgarian truck driver in Denmark and on the lonely European highways, depicted with brutal realism and precision.",
+      "director": "Adrian Jalily, Sybilla Tuxen, Carl Olsson & Thomas Elley ",
+      "duration": 71,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-10",
+          "time": "10:00 - 11:30",
+          "cinema": "Empire Bio"
+        },
+        {
+          "date": "2025-05-11",
+          "time": "12:00 - 13:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-12",
+          "time": "14:00 - 15:30",
+          "cinema": "Vester Vov Vov"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "category": "World Premiere",
+      "title": "Black Water",
+      "tagline": "In southern Bangladesh, Lokhi and her family prepare to escape an extreme climate and flee to Dhaka - the fastest growing city in the world. A film about a future that is already a reality.",
+      "country": "Spain",
+      "year": 2025,
+      "description": "Bangladesh is one of the places in the world most vulnerable to climate change. The coasts are low-lying and the areas near the river delta are vulnerable to rising sea levels, cyclones and storm surges. The government forecasts monsoons, tropical cyclones, heavy rain and flooding.\n\nWith the risk of a natural disaster hanging over their heads, Lokhi and her family are preparing to leave their home before everything washes away. They are migrating to Dhaka, and they are far from alone. Thousands of climate refugees arrive every day in the capital, the fastest growing city in the world. But how long will Dhaka be able to accommodate so many people?\n\nBy 2050, nearly 20 percent of the southern coastline will be uninhabitable and 30 million people will be displaced. The largest mass migration in human history is no longer a distant prophecy, it is an inevitable reality. Bangladeshis are fighting for climate justice and compensation before it is too late.\n\n",
+      "director": "Natxo Leuza",
+      "duration": 85,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-01",
+          "time": "10:00 - 11:30",
+          "cinema": "Cinemateket"
+        },
+        {
+          "date": "2025-05-02",
+          "time": "12:00 - 13:30",
+          "cinema": "Empire Bio"
+        },
+        {
+          "date": "2025-05-03",
+          "time": "14:00 - 15:30",
+          "cinema": "Palads"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "category": "",
+      "title": "Blue Road – The Edna O’Brien Story",
+      "tagline": "The Irish author turned taboos and traditions upside down in the 1960s. In her own words, we get the wild story as told from the inside and with zero filters.",
+      "country": "Ireland & United Kingdom ",
+      "year": 2024,
+      "description": "Who wouldn’t want to be friends with Edna O’Brien? Recently rediscovered by avid international readers everywhere, the Irish author was a woman with the courage to write (and do) everything others could only dream of. Her sexually direct debut novel ‘The Country Girls’ in 1960 broke all the taboos of the time in conservative Catholic country, and paved the way for a decade where she was known for throwing the best house parties with the likes of Paul McCartney, Marlon Brando and Judy Garland on the guest list. O’Brien was a social comet and a literary luminary, but that didn’t mean success came easy. Quite the opposite. With O’Brien herself as a dazzling narrator, we get both the personal struggles with the men in her life, as well as a riveting, panoramic life in the middle of the cultural and literary revolution of the 1960s and 70s.",
+      "director": "Sinéad O'Shea",
+      "duration": 98,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-02",
+          "time": "10:00 - 11:30",
+          "cinema": "Dagmar"
+        },
+        {
+          "date": "2025-05-03",
+          "time": "12:00 - 13:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-04",
+          "time": "14:00 - 15:30",
+          "cinema": "Empire Bio"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "category": "",
+      "title": "Bluish",
+      "tagline": "Beautiful and atmospheric feature film about two young women in an unnamed city, which with delicate poetic and psychological presence maps out life after social isolation.",
+      "country": "Austria",
+      "year": 2024,
+      "description": "It’s winter, and two young women are adrift in an unnamed European city. If ‘bluish’ were a state of mind – and the film of the same name very much is – it would be a feeling somewhere between melancholy and radical openness. This is how Errol and Sasha experience the world around them, and it’s the feeling the film describes with a soft and almost weightless poetry. The directors behind ‘Beatrix’ (CPH:DOX 2022) are artistically related to the Berlin School, but in just two feature films they have established an elliptical film language that is unmistakably their own. A contemporary piece of filmmaking that also takes the temperature of the mental situation after covid lockdowns and social isolation. Winner of the main prize at FIDMarseille.",
+      "director": "Lilith Kraxner & Milena Czernovsky",
+      "duration": 83,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-03",
+          "time": "10:00 - 11:30",
+          "cinema": "Cinemateket"
+        },
+        {
+          "date": "2025-05-04",
+          "time": "12:00 - 13:30",
+          "cinema": "Vester Vov Vov"
+        },
+        {
+          "date": "2025-05-05",
+          "time": "14:00 - 15:30",
+          "cinema": "Gloria Biograf"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "category": "",
+      "title": "Bogancloch",
+      "tagline": "CPH:DOX winner Ben Rivers is back with a poetic portrait of hermit Jake Williams and his life in the Scottish Highlands. An ingenious film shot in beautiful black and white.",
+      "country": "United Kingdom, Germany & Iceland",
+      "year": 2024,
+      "description": "Deep in the Scottish Highlands, hermit Jake Williams leads a laid-back life in his own good company, and has done so for the past 40 years. Here, he has room to reflect slowly and deeply on the cosmic interconnectedness of everything while the seasons change and work gets done. All this is given loving attention in Ben Rivers‘ new film which invites us into Williams’ life world, where the wind rustles the pine trees so you can almost smell them. Rivers won the main prize at CPH:DOX for ‘Two Years at Sea’ back in 2011, and has returned to his friend Jake with a phenomenally poetic sequel that you by no means need to have seen the first film to fully enjoy – although you will certainly want to! Is Bogancloch a place on the map or a dimension in Jake’s inner universe? Nothing is certain out in the Highlands.",
+      "director": "Ben Rivers",
+      "duration": 86,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-04",
+          "time": "10:00 - 11:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-05",
+          "time": "12:00 - 13:30",
+          "cinema": "Park Bio"
+        },
+        {
+          "date": "2025-05-06",
+          "time": "14:00 - 15:30",
+          "cinema": "Cinemateket"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "category": "",
+      "title": "Bright Future",
+      "tagline": "A deeply fascinating time travel to North Korea, where young socialists from all over the planet gathered in 1989, a few months before the collapse of the Eastern Bloc.",
+      "country": "Romania",
+      "year": 2024,
+      "description": "In the summer of 1989, young socialists from 177 countries gathered for a huge youth festival in the North Korean capital of Pyongyang. Consider for a moment that it would have happened today, and how things have gone since. Even though it was sunny and the spirits and idealism of the young participants were high, communism itself was creaking under everyone’s feet. China had cracked down hard on the protests in Tiananmen Square. The Soviet Union was a living museum. And in Romania, Ceaușescu’s time as dictator was soon to come to an abrupt end. It was all just a few months away from collapse, and luckily the youth festival was documented by a film crew. ‘Bright Future’ rediscovers the incredible material with analytical precision, the necessary sense of humour and a loving solidarity with the young idealists’ sincere dream to make the world a better place. A film in the spirit of the new wave in Romanian cinema.",
+      "director": "Andra MacMasters",
+      "duration": 88,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-05",
+          "time": "10:00 - 11:30",
+          "cinema": "Empire Bio"
+        },
+        {
+          "date": "2025-05-06",
+          "time": "12:00 - 13:30",
+          "cinema": "Palads"
+        },
+        {
+          "date": "2025-05-07",
+          "time": "14:00 - 15:30",
+          "cinema": "Palads"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "category": "World Premiere",
+      "title": "Casa",
+      "tagline": "A group of 20-year-olds from tough backgrounds pursue their fashion dreams at Casa 93, a unique institute offering a last chance for some and a new beginning for others, capturing their transformative journey through an extraordinary year.",
+      "country": "France",
+      "year": 2025,
+      "description": "Their names are Lobai, Mathis, Chloé, Le Grain, Émilie… They’re between 18 and 25, with no formal training and huge dreams. Brought up with social media, they want the same life as their icons. To have it all.  To be noticed. But if they weren’t born on the right side of the tracks, they have unformatted creativity and determination.\n \nCASA 93 is their chance—the second for some, the last for others. It’s a demanding fashion school, free and accessible without any diploma requirements, based in the suburbs of Paris. Their daily lives are precarious, their equilibrium fragile, but here, they try to cling to life with thread and needles. Whether they succeed or fail, their metamorphosis is underway.",
+      "director": "Caroline Benarrosh",
+      "duration": 85,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-06",
+          "time": "10:00 - 11:30",
+          "cinema": "Cinemateket"
+        },
+        {
+          "date": "2025-05-07",
+          "time": "12:00 - 13:30",
+          "cinema": "Park Bio"
+        },
+        {
+          "date": "2025-05-08",
+          "time": "14:00 - 15:30",
+          "cinema": "Grand Teatret"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "category": "Art",
+      "title": "Caught by the Tides",
+      "tagline": "Hailed as one of the best films of the year since its premiere at Cannes. Chinese auteur Jia Zhang-ke is back with a poetic masterpiece shot over 20 years as a woman searches for her missing husband.\n\n",
+      "country": "China",
+      "year": 2024,
+      "description": "A plot that can be explained in a single sentence sets the minimalist action in motion in Jia Zhang-ke’s masterful new film. The woman Qiaoqiao is travelling through modern China to search for her missing husband, who left their shared hometown of Datong without a word to try his luck in a bigger city. Qiaoqiao wants to find her husband, but the journey is the actual destination in ‘Caught by the Tides’ – an impressionistic and truly magnificent film that balances between documentary and fiction, consisting of footage shot over more than 20 years by Jia Zhang-ke with his wife Zhao Tao in the role of Qiaoqiao. Since its premiere at Cannes, it has been hailed by the critics around the world as one of the best films of the year.",
+      "director": "Zhang-Ke Jia",
+      "duration": 111,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-07",
+          "time": "10:00 - 11:30",
+          "cinema": "Empire Bio"
+        },
+        {
+          "date": "2025-05-08",
+          "time": "12:00 - 13:30",
+          "cinema": "Park Bio"
+        },
+        {
+          "date": "2025-05-09",
+          "time": "14:00 - 15:30",
+          "cinema": "Dagmar"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "category": "World Premiere",
+      "title": "Cirkeline & the invisible artist",
+      "tagline": "An honest, loving and insightful portrait of Cirkeline's mother: Hanne Hastrup, the artist behind one of Denmark's most beloved animated characters, who never received the recognition she deserves.",
+      "country": "Denmark",
+      "year": 2025,
+      "description": "Everyone knows the animated heroine Cirkeline and her mousy friends Ingolf and Frederik. For generations they have been enjoyed by children and their parents. But few people know the woman who invented Cirkeline. Her name is Hanne Hastrup, and like many other women, she lost her place in the spotlight to a man – but in this case, to her own husband, artist and animator Jannik Hastrup. They found each other and began collaborating on the famous Cirkeline films, and now they sit side by side on a sofa and tell the story of the creation of the icon in the red dress with the black spots. It’s a personal story about how Hanne Hastrup invented the imaginative universe out of necessity. It’s a touching story of love between two creative, idealistic young people who were against the bourgeoisie and who insisted on doing things their own way. And not least, it is a coming-of-artist story about a woman who finally gets her well-deserved place in the spotlight.",
+      "director": "Esther Wellejus",
+      "duration": 74,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-08",
+          "time": "10:00 - 11:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-09",
+          "time": "12:00 - 13:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-10",
+          "time": "14:00 - 15:30",
+          "cinema": "Palads"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "category": "World Premiere",
+      "title": "City Child",
+      "tagline": "An enigmatic and elliptical narrative slowly takes shape in 'City Child', whose architectural form mirrors the geometric structure of a high-rise building rising against a dark sky above Berlin.",
+      "country": "United States & Germany",
+      "year": 2025,
+      "description": "It’s winter in Berlin. Two couples meet, and although they exchange only a few glances and even fewer words, the outlines of an obscure plot emerge, as if a complex psychological thriller was unfolding just outside the frame. \nAustin Lynch works with basic cinematic elements such as light and shadow, sound and silence, and not least time itself. The result is a hypnotic and atmospheric film that is neither documentary nor fiction, but rather a space that envelops you – just like the darkness of a cinema and the blue twilight that settles over Berlin and its inhabitants. \nEvery image and sound is composed with an eminent sense of line, shape and space. The elements come together in an audiovisual whole that has found its definitive, almost sculptural form after a careful process of gestation. The director of ‘Gray House’ (CPH:DOX 2017) is back with a haunting work that must be experienced at all costs in the cinema.",
+      "director": "Austin Lynch",
+      "duration": 60,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-09",
+          "time": "10:00 - 11:30",
+          "cinema": "Dagmar"
+        },
+        {
+          "date": "2025-05-10",
+          "time": "12:00 - 13:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-11",
+          "time": "14:00 - 15:30",
+          "cinema": "Cinemateket"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "category": "World premiere",
+      "title": "Climate in Therapy",
+      "tagline": "Seven climate scientists meet in a godforsaken meeting room to engage in circle therapy about their shared climate anxiety. Can emotional honesty be part of the solution?",
+      "country": "Sweden & Norway",
+      "year": 2025,
+      "description": "Open a bottle of climate anxiety. Pour the contents into a hot pot under high pressure. Then add a teaspoon of horror, a tablespoon of anger and three drops of deep disappointment in humanity. Let it all come to a boil while you invite a group of scientific researchers who don’t know each other, but know all about the fact that the end of the world is near. Let the scientists spice up the dish with their most suppressed feelings about climate change and the future of the planet. And last but not least, bring in a professional group therapist who isn’t afraid of an awkward silence to get them to sit in a circle and share their feelings with each other.\n\n‘Climate in Therapy’ is a humorous, inventive and serious experiment in which seven climate scientists go for group therapy in a godforsaken hotel. Here they confront an academic taboo and a hitherto unknown area of research in itself: their own emotions. Therapist Richard Beck faces a tricky task with the scientists, who are much better at talking about natural disasters than what’s burning inside themselves. But who knows, maybe climate disaster can be solved if the knots in ourselves can be untied?",
+      "director": "Nathan Grossman",
+      "duration": 65,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-10",
+          "time": "10:00 - 11:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-11",
+          "time": "12:00 - 13:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-12",
+          "time": "14:00 - 15:30",
+          "cinema": "Park Bio"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "category": "World Premiere",
+      "title": "Close to Home",
+      "tagline": "A simple and beautiful portrait of a filmmaker and his father, shot in one long take on a bench in Punjab.",
+      "country": "Denmark & India",
+      "year": 2025,
+      "description": "Two men sit on a bench. You don’t quite know where, but as their conversation unfolds, you realize that they are father and son, and that their shared history is long, complex, full of warmth and perhaps has a sore spot or two. Filmmaker Shubhdeep Singh Parwana’s father emigrated from Punjab to Copenhagen in 1974, started a family and made a life for himself. In 2013, he decided to move back to India after almost 40 years in Denmark. ‘Close to Home’ is a simple and beautiful film in one long take that contains all the humor, love and little silences in their candid conversation.",
+      "director": "Shubhdeep Singh Parwana",
+      "duration": 24,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-11",
+          "time": "10:00 - 11:30",
+          "cinema": "Empire Bio"
+        },
+        {
+          "date": "2025-05-12",
+          "time": "12:00 - 13:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-13",
+          "time": "14:00 - 15:30",
+          "cinema": "Palads"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "category": "World Premiere",
+      "title": "The Garden Caretaker",
+      "tagline": "An art project is reconnecting with nature and other species at an old asphalt factory that is being converted into a new urban district.",
+      "country": "Denmark",
+      "year": 2025,
+      "description": "At a former asphalt factory construction site in a Copenhagen suburb, a group of artists and citizens aer participating in a project to reconnect with the remnants of nature that we often overlook in the city. The boundaries between artist, gardener and biologist are osmotic in a project where five different artists, each with their own practice, share the role of ‘Garden Caretaker’ – a figure that invites participants to experience and rediscover the richness of the surrounding flora and fauna in the middle of a changing urban space.",
+      "director": "Natalia Anna Ciepiel & William Andreas Wivel",
+      "duration": 48,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-12",
+          "time": "10:00 - 11:30",
+          "cinema": "Cinemateket"
+        },
+        {
+          "date": "2025-05-13",
+          "time": "12:00 - 13:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-14",
+          "time": "14:00 - 15:30",
+          "cinema": "Grand Teatret"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "category": "",
+      "title": "Coexistence, My Ass!",
+      "tagline": "With humor as her weapon of choice, Israeli comedian Noam Shuster Eliassi has provoked strong reactions with her mission for freedom and justice. A goal that suddenly needs to be defended like never before.",
+      "country": "United States & France",
+      "year": 2025,
+      "description": "‘Coexistence, My Ass!’ follows Israeli activist-comedian Noam Shuster Eliassi as she creates a comedy show by the same name. Shot over five tumultuous years, the film traces Noam’s personal, professional and political journey in tandem with the region’s steady deterioration. Raised in a bilingual Israeli-Palestinian village — the only intentionally integrated community in the country — Noam grows disillusioned with traditional peace activism. She pivots to stand-up and quickly attracts attention across the Middle East. But as her star rises, everything around her falls apart. With biting satire, Noam pushes her audiences to face difficult truths that aren’t always funny but do remind us that another reality is possible.",
+      "director": "Amber Fares",
+      "duration": 95,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-13",
+          "time": "10:00 - 11:30",
+          "cinema": "Cinemateket"
+        },
+        {
+          "date": "2025-05-14",
+          "time": "12:00 - 13:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-15",
+          "time": "14:00 - 15:30",
+          "cinema": "Dagmar"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "category": "",
+      "title": "Collective Monologue",
+      "tagline": "A sensory film from a variety of zoos in Argentina, where the life and world of animals is closely connected to their human caretakers.",
+      "country": "Argentina & United Kingdom",
+      "year": 2024,
+      "description": "Who knows what an anteater is doing in the middle of the night? If anyone does, the zookeeper Maca is probably the person to ask – and if not, you can find answers in Jessica Sarah Rinland’s quietly beautiful new film from various zoos in Argentina, where good people like Maca care for the animals and perhaps even develop a kind of friendship with them.\n\nThrough Rinland’s 16mm footage and glimpses from surveillance cameras, we get a rare insight into life in captivity in zoos and animal shelters. But we also get an authentic insight into a \nunique relationship across species, languages and the imagined boundaries of life forms. There are tender moments between the animals and their caretakers, while also touching on social and historical issues such as labor, exploitation and the influence of colonialism on our view of nature.\n\nWith ‘Collective Monologue’, Rinland – who was also the photographer behind Lois Patiño’s award-winning ‘Samsara’ – has pulled off a sensory feat that invites us to consider how we not only look at animals, but also share the world with them.",
+      "director": "Jessica Sarah Rinland",
+      "duration": 104,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-14",
+          "time": "10:00 - 11:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-15",
+          "time": "12:00 - 13:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-16",
+          "time": "14:00 - 15:30",
+          "cinema": "Park Bio"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "category": "",
+      "title": "Collective Monologue",
+      "tagline": "A sensory film from a variety of zoos in Argentina, where the life and world of animals is closely connected to their human caretakers.",
+      "country": "Argentina & United Kingdom",
+      "year": 2024,
+      "description": "Who knows what an anteater is doing in the middle of the night? If anyone does, the zookeeper Maca is probably the person to ask – and if not, you can find answers in Jessica Sarah Rinland’s quietly beautiful new film from various zoos in Argentina, where good people like Maca care for the animals and perhaps even develop a kind of friendship with them.\n\nThrough Rinland’s 16mm footage and glimpses from surveillance cameras, we get a rare insight into life in captivity in zoos and animal shelters. But we also get an authentic insight into a \nunique relationship across species, languages and the imagined boundaries of life forms. There are tender moments between the animals and their caretakers, while also touching on social and historical issues such as labor, exploitation and the influence of colonialism on our view of nature.\n\nWith ‘Collective Monologue’, Rinland – who was also the photographer behind Lois Patiño’s award-winning ‘Samsara’ – has pulled off a sensory feat that invites us to consider how we not only look at animals, but also share the world with them.",
+      "director": "Jessica Sarah Rinland",
+      "duration": 104,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-15",
+          "time": "10:00 - 11:30",
+          "cinema": "Palads"
+        },
+        {
+          "date": "2025-05-16",
+          "time": "12:00 - 13:30",
+          "cinema": "Cinemateket"
+        },
+        {
+          "date": "2025-05-17",
+          "time": "14:00 - 15:30",
+          "cinema": "Park Bio"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "category": "World Premiere",
+      "title": "Copan",
+      "tagline": "Social-realist sci-fi from an apartment block with five thousand inhabitants in the centre of São Paulo. A Brazilian microcosm about money, power and a fragile democracy.",
+      "country": "Brazil & France",
+      "year": 2025,
+      "description": "In the heart of São Paulo stands a gigantic concrete building. Designed by Oscar Niemeyer, it is a symbol of modern Brazilian architecture. The building is called Copan and it is home to over five thousand residents spread over 120,000 square metres. \n\nInside Copan, an election is underway. It’s time to decide who will be the building’s administrator. Tensions are high as the current administrator has no intention of giving up his position of 30 years without a fight. But an election is also underway outside the building’s enormous walls. Lula da Silva and Jair Bolsonaro are vying to become Brazil’s president. And Copan is a perfect microcosm for a story about power and money in a fragile democracy. \n\nDirector Carine Wallauer is herself one of Copan’s thousands of residents, and her camera floats dreamily in and out of the apartments, observing the lives of the neighbours. ‘Copan’ is urban social realism with a touch of sci-fi, from a modern Tower of Babel in Brazil.",
+      "director": "Carine Wallauer",
+      "duration": 98,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-16",
+          "time": "10:00 - 11:30",
+          "cinema": "Cinemateket"
+        },
+        {
+          "date": "2025-05-17",
+          "time": "12:00 - 13:30",
+          "cinema": "Vester Vov Vov"
+        },
+        {
+          "date": "2025-05-18",
+          "time": "14:00 - 15:30",
+          "cinema": "Gloria Biograf"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "category": "World Premiere",
+      "title": "Cosmic Balance",
+      "tagline": "Hour-long musical trance sessions lead a young man from a small Indonesian village to his first concert outside the city limits at a music festival in Denmark. A cosmic film about music, spirituality and heritage.",
+      "country": "Denmark & Indonesia",
+      "year": 2025,
+      "description": "The young Indonesian musician Anggi was given away as an infant and grew up among musicians practicing the traditional music phenomenon Reak. Reak is practiced in West Java and is a spiritual cultural form where both musicians and audiences go into trance and are possessed by the spirits of their ancestors. \n\nNow a young man, Anggi is set to become the new leader of his Reak group. But suddenly his competitors begin to question his ability to lead, as he is not related by blood to the group’s previous leaders. And as if that was not enough to deal with, there’s also trouble with his future in-laws who won’t let him marry their daughter because he has neither a proper education nor a respectable job. \n\nIn the midst of all this, the insecure and sensitive Anggi turns to reak culture, hour-long trance sessions and helpful shamans. And suddenly he finds himself in Denmark where he will perform outside his village for the first time at Roskilde Festival.",
+      "director": "Andreas Johnsen",
+      "duration": 77,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-17",
+          "time": "10:00 - 11:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-18",
+          "time": "12:00 - 13:30",
+          "cinema": "Palads"
+        },
+        {
+          "date": "2025-05-19",
+          "time": "14:00 - 15:30",
+          "cinema": "Dagmar"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "category": "European Premiere",
+      "title": "Dear Tomorrow",
+      "tagline": "In Japan, two people have more in common than they think in a film about loneliness in the modern world, and about finding the courage to reconnect with life.",
+      "country": "Denmark, Sweden & Japan",
+      "year": 2025,
+      "description": "38 million people live in and around Tokyo, yet many of them are so lonely that in some cases it is life-threatening. Loneliness is so prevalent that Japan has appointed a minister for loneliness and experts speak of an (a)social pandemic across the modern world. In ‘Dear Tomorrow’ we meet two of them. Unbeknownst to them, they are actually already connected to each other through the chat line ‘A Place for You’: a lifeline where young volunteers try to help people in crisis. \n\nBut every day thousands of people are writing, and helping everyone is difficult. This is a film you feel deep in your heart – not least when the light finally breaks through and they gently make the human contact they have been missing. With its sensitive and luminous images, ‘Dear Tomorrow’ is a quiet and attentive, and therefore all the more poignant film about the universal need for contact and presence.",
+      "director": "Kaspar Astrup Schröder",
+      "duration": 82,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-18",
+          "time": "10:00 - 11:30",
+          "cinema": "Empire Bio"
+        },
+        {
+          "date": "2025-05-19",
+          "time": "12:00 - 13:30",
+          "cinema": "Vester Vov Vov"
+        },
+        {
+          "date": "2025-05-20",
+          "time": "14:00 - 15:30",
+          "cinema": "Cinemateket"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "category": "",
+      "title": "Death Without Mercy",
+      "tagline": "An Oscar-nominated Syrian filmmaker uncovers the political and human aftermath of the devastating earthquake that struck Syria and Turkey two years ago.",
+      "country": "United Kingdom",
+      "year": 2024,
+      "description": "Five years after her Oscar-nominated film ‘For Sama’, Syrian journalist and filmmaker Waad Al-Kateab returns with a gripping documentary that examines the aftermath of the disaster that struck southern Turkey and western Syria in February 2023: an earthquake that killed more than 50,000 people. \n\nAl-Kateabs uses mobile videos, surveillance footage and news reports to provide a detailed reconstruction of the devastating events that took place in an area that is home to thousands of Syrian refugees, focusing on two of the many victims and their bereaved families.\n\nAlthough the disaster is natural, Al-Kateab makes it clear that it is also political. She criticizes the corruption of a government that allowed the construction of buildings not designed to withstand earthquakes in a region otherwise known to be at risk. And she pays tribute to the survivors’ will to resist in the midst of a merciless system.",
+      "director": "Waad Alkateab",
+      "duration": 84,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-19",
+          "time": "10:00 - 11:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-20",
+          "time": "12:00 - 13:30",
+          "cinema": "Palads"
+        },
+        {
+          "date": "2025-05-21",
+          "time": "14:00 - 15:30",
+          "cinema": "Grand Teatret"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "category": "",
+      "title": "Disco’s Revenge",
+      "tagline": "From resistance to dancefloor, and from Studio 54 to 'Saturday Night Fever': Disco is an ever-evolving movement.",
+      "country": "Canada",
+      "year": 2024,
+      "description": "‘Disco’s Revenge’ celebrates disco music’s true legacy of resistance and liberation. Born in the gay underground clubs of 1970s New York in the wake of the civil rights movement and the Stonewall riots, disco was much more than just music from the start. Disco was a movement. A movement that fought for diversity, self-expression and joy – until it was commercialized and became the subject of the infamous hate campaign ‘Disco Sucks’.\n\nNarrated by those who lived through it all – Nile Rodgers, Billy Porter, Nona Hendryx, Grandmaster Flash, Fab Five Freddy and many more – the film traces the rise and fall of disco, its transformation into house music, and its comeback in this millennium. Legendary dance floors, electrifying performances and an unforgettable soundtrack – disco finally gets its rightful place in history and proves that its spirit of inclusion and empowerment is more vital than ever.",
+      "director": "Omar Majeed & Peter Mishara",
+      "duration": 100,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-20",
+          "time": "10:00 - 11:30",
+          "cinema": "Empire Bio"
+        },
+        {
+          "date": "2025-05-21",
+          "time": "12:00 - 13:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-22",
+          "time": "14:00 - 15:30",
+          "cinema": "Vester Vov Vov"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "category": "World Premiere",
+      "title": "Dust & Flow: Muds, Movement, Time, Scale",
+      "tagline": "Mud can tell us a lot about the planet's deep past and possible future – and here is the film that translates its silent language into an imaginative stream of thought.",
+      "country": "Iceland, Svalbard and Jan Mayen, Sweden, Denmark & Greenland",
+      "year": 2025,
+      "description": "The Earth is moving beneath our feet. Climatic changes have planetary consequences, and where visual artists of the 20th century were more concerned with landscapes, artist Rikke Luther has turned to a more recent phenomenon: mudscapes. \n\n‘Dust & Flow’ is an interdisciplinary and thought-provoking film with a huge intellectual wingspan that gives shape to the liquid stuff of mud and analyzes what it means for our perception of geology and climate, but also of contemporary political and social movements. For her magnificent images from Iceland, Gotland and Svalbard, Luther has written an original text that actor David Bateson performs on the soundtrack.",
+      "director": "Rikke Luther",
+      "duration": 29,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-21",
+          "time": "10:00 - 11:30",
+          "cinema": "Park Bio"
+        },
+        {
+          "date": "2025-05-22",
+          "time": "12:00 - 13:30",
+          "cinema": "Vester Vov Vov"
+        },
+        {
+          "date": "2025-05-23",
+          "time": "14:00 - 15:30",
+          "cinema": "Vester Vov Vov"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "category": "World Premiere",
+      "title": "I Think We Begin as Light",
+      "tagline": "Could a collaboration between plants, light and microorganisms show us a new and more fruitful path for agriculture? Take a journey beneath the earth's surface and meet the farmers who are making the attempt.",
+      "country": "Denmark",
+      "year": 2025,
+      "description": "Just below our feet lies a living ecosystem shrouded in mystery. A silent and busy community of fungi, bacteria and other microscopic organisms that support the soil’s natural ability to filter water, store carbon and ultimately grow food. But after decades of industrial agriculture, in 20 seasons there will be no fertile soil left to cultivate. \n\nA group of regenerative Danish farmers are trying to change that through endless experiments in cultivating living landscapes. But gradually they realize that there are no simple solutions in nature. ‘I Think we Begin as Light’ is an ethnographic journey below the earth’s surface that explores the complex relationships between microorganisms, plants and sunlight. A sensuous and poetic film about the earth disappearing beneath us – and those who struggle to recreate it.",
+      "director": "Emma Harris & Sille Skovgaard",
+      "duration": 40,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-22",
+          "time": "10:00 - 11:30",
+          "cinema": "Park Bio"
+        },
+        {
+          "date": "2025-05-23",
+          "time": "12:00 - 13:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-24",
+          "time": "14:00 - 15:30",
+          "cinema": "Vester Vov Vov"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "category": "",
+      "title": "Elementary",
+      "tagline": "French first-rate director Claire Simon portrays the small dramas and triumphs of a progressive Parisian primary school with empathetic gentleness. Touching, funny and thoughtful.",
+      "country": "France",
+      "year": 2024,
+      "description": "In the hands of Claire Simon, the familiar always rises to new heights. Here we find ourselves in a primary school on the outskirts of Paris, in a culturally mixed working class neighbourhood. But it’s not a school like any other. In an underfunded system, it is a progressive exception where teachers are tireless superheroes who know that they are not only teaching, but educating young students to become human beings. Both religion and politics are discussed, and if a student sleeps in class, the idea is that the student probably needs sleep and should not be woken up or disturbed. With the same empathy, gentleness and sense of humour, Claire Simon observes the students in the midst of the small dramas and triumphs that unfold daily in the classroom and in the schoolyard. Stay for the grand finale: A phenomenal rendition of Rihanna’s ‘Diamonds’.",
+      "director": "Claire Simon",
+      "duration": 105,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-23",
+          "time": "10:00 - 11:30",
+          "cinema": "Vester Vov Vov"
+        },
+        {
+          "date": "2025-05-24",
+          "time": "12:00 - 13:30",
+          "cinema": "Dagmar"
+        },
+        {
+          "date": "2025-05-25",
+          "time": "14:00 - 15:30",
+          "cinema": "Palads"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "category": "World Premiere",
+      "title": "Elendig Software",
+      "tagline": "A unique taste of a playful and brand new series about the Danish pop rock success Zar Paulo.",
+      "country": "Denmark",
+      "year": 2025,
+      "description": "The story of the Danish band Zar Paulo is a tale of a group of young men who met at a boarding school, formed a band and suddenly became wildly successful. But it’s also a story about a bunch of nerdy young men who love Star Trek, computer games and ancient Roman coins. And now it’s also a story you can experience on the big screen with the first two episodes of a brand new series about the band. \n\nIt’s a unique, unfiltered insight into the process and period leading up to Zar Paulo releasing their first album and really breaking through to the general public. We’re along for the entire journey from an abandoned county hospital to their warm-up gigs for the massive success band The Minds of 99, to a contract with one of the country’s most reputable record labels. \n\nTheir software may suck, and Captain Kirk has been replaced by five young guys who have named themselves after a Russian Tsar. Nevertheless, Czar Paulo is headed straight for the stars.",
+      "director": "Freja Rørkær & Oskar Langballe Dahl",
+      "duration": 86,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-24",
+          "time": "10:00 - 11:30",
+          "cinema": "Park Bio"
+        },
+        {
+          "date": "2025-05-25",
+          "time": "12:00 - 13:30",
+          "cinema": "Park Bio"
+        },
+        {
+          "date": "2025-05-26",
+          "time": "14:00 - 15:30",
+          "cinema": "Grand Teatret"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "category": "European Premiere",
+      "title": "Ellis Park",
+      "tagline": "Charismatic composer Warren Ellis invites us into his personal universe where he runs a shelter for endangered animals in Sumatra when he is inventing new sounds with his violin and synthesizer.",
+      "country": "Australia, Indonesia & France",
+      "year": 2024,
+      "description": "Warren Ellis is best known Nick Cave’s counterpart and soulmate in The Bad Seeds, a musical wizard who roams the stage with his iconic violin and long grey beard fluttering in all directions. But the unorthodox multi-instrumentalist is much more than that. He’s also a musician in his own right for three decades and a passionate animal lover who runs a shelter for trafficked and abused animals on the Indonesian island of Sumatra. And it is this whole new side of the charismatic and deeply sympathetic Ellis that you meet in ‘Ellis Park’, which also tells his life story and charts his musical career. A career that started at his parents’ home in Australia, where his father’s tenacity on the guitar left its mark on his son, and continuted to Sumatra where Ellis funds a centre for tropical animals that are prepared to be released back into the wild. And with his shirt buttoned down to his belly button, the wilderness is a place where Ellis feels at home himself.",
+      "director": "Justin Kurzel",
+      "duration": 106,
+      "posterUrl": "",
+      "schedules": [
+        {
+          "date": "2025-05-25",
+          "time": "10:00 - 11:30",
+          "cinema": "Grand Teatret"
+        },
+        {
+          "date": "2025-05-26",
+          "time": "12:00 - 13:30",
+          "cinema": "Gloria Biograf"
+        },
+        {
+          "date": "2025-05-27",
+          "time": "14:00 - 15:30",
+          "cinema": "Cinemateket"
+        }
+      ]
+    }
+]

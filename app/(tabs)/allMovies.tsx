@@ -11,7 +11,7 @@ import {
   StyleSheet,
   View
 } from 'react-native';
-import { useAppData } from '../context/AppDataContext';
+import { useAppData } from '../../context/AppDataContext';
 
 const HEADER_HEIGHT = 80;
 

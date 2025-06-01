@@ -14,7 +14,7 @@ import {
   Text,
   View
 } from 'react-native';
-import { fetchSchedule } from '../api/DoxFilmApi';
+import { fetchSchedule } from '../../api/DoxFilmApi';
 
 const FESTIVAL_DATES = ['2025-05-05', '2025-05-06', '2025-05-07']
 
