@@ -1,6 +1,5 @@
 import { initializeApp } from 'firebase/app';
-// @ts-ignore: getReactNativePersistence is not typed properly in Firebase SDK
-import { GoogleAuthProvider, initializeAuth } from 'firebase/auth';
+import { GoogleAuthProvider, getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -13,9 +12,7 @@ const firebaseConfig = {
   };
 
 const app = initializeApp(firebaseConfig);
-//@ts-ignore
-export const auth = initializeAuth(app)
-// Google Auth provider for OAuth sign-in
+export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export const db = getFirestore(app);
 

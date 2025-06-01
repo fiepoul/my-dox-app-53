@@ -1,10 +1,8 @@
 import MeltedTitle from '@/components/MeltedTitle';
 import SurrealBackground from '@/components/SurrealBackground';
+import { useSignup } from '@/hooks/useSignup';
 import { commonStyles } from '@/styles/CommonStyles';
-import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { collection, doc, getDocs, query, serverTimestamp, setDoc, where } from 'firebase/firestore';
 import React, { useState } from 'react';
 import {
   ActivityIndicator,
@@ -18,7 +16,6 @@ import {
   TextInput,
   View
 } from 'react-native';
-import { auth, db } from '../firebaseconfig/firebaseconfig';
 import { useSurrealAnime } from '../hooks/useSurrealAnime';
 
 export default function SignupScreen() {
@@ -27,41 +24,16 @@ export default function SignupScreen() {
   const [username, setUsername] = useState('');
   const [email, setEmail]     = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError]       = useState<string|null>(null);
-  const [loading, setLoading]   = useState(false);
   const { circAnim, rectAnim, meltAnim } = useSurrealAnime();
+  const { signup, loading, error } = useSignup();
 
   const handleSignup = async () => {
-    setError(null);
-    setLoading(true);
-    Keyboard.dismiss();
-    try {
-      if (!fullName.trim() || !username.trim()) {
-        throw new Error('Please fill in name & username');
-      }
-      // check username uniqueness
-      const q = query(collection(db, 'users'), where('username','==',username.trim()));
-      const snap = await getDocs(q);
-      if (!snap.empty) throw new Error('Username taken');
-
-      const cred = await createUserWithEmailAndPassword(auth, email.trim(), password);
-      const uid = cred.user.uid;
-      await setDoc(doc(db,'users',uid),{
-        fullName: fullName.trim(),
-        username: username.trim(),
-        createdAt: serverTimestamp(),
-        friends: [],
-      });
-
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-      router.replace('/');
-    } catch(e: any) {
-      setError(e.message || 'Could not create account');
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  Keyboard.dismiss();
+  const success = await signup(fullName, username, email, password);
+  if (success) {
+    router.replace('/');
+  }
+};
 
   return (
     <KeyboardAvoidingView

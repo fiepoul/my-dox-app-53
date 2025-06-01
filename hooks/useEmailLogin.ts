@@ -1,7 +1,6 @@
 import { auth } from '@/firebaseconfig/firebaseconfig';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Haptics from 'expo-haptics';
-import { useRouter } from 'expo-router';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { Platform } from 'react-native';
@@ -9,7 +8,6 @@ import { Platform } from 'react-native';
 export const useEmailLogin = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const router = useRouter();
 
   const handleEmailLogin = async (email: string, password: string): Promise<boolean> => {
     setError(null);

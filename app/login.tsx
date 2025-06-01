@@ -26,7 +26,7 @@ export default function LoginScreen() {
   const router = useRouter();
   const { circAnim, rectAnim, meltAnim } = useSurrealAnime();
   const { handleEmailLogin, loading, error } = useEmailLogin();
-  const { signIn: handleGoogleLogin } = useGoogleLogin();
+  const { signIn } = useGoogleLogin();
   const { suggestions, updateSuggestions } = useEmailSuggestions();
 
   const [email, setEmail] = useState('');
@@ -44,14 +44,21 @@ export default function LoginScreen() {
   }).start();
   }, []);
 
-  const handleLogin = async () => {
-  Keyboard.dismiss();
-  const success = await handleEmailLogin(email, password);
-  if (success) {
-    await updateSuggestions(email);
-    router.replace('/');
-  }
-};
+const handleEmailSubmit = async () => {
+    Keyboard.dismiss();
+    const success = await handleEmailLogin(email, password);
+    if (success) {
+      await updateSuggestions(email);
+      router.replace('/');
+    }
+  };
+
+  const handleGoogleSubmit = async () => {
+    const user = await signIn();
+    if (user) router.replace('/');
+  };
+
+
 
 const filtered = useMemo(() =>
   suggestions.filter(e =>
@@ -108,14 +115,14 @@ const filtered = useMemo(() =>
               onChangeText={setPassword}
             />
 
-            <Pressable onPress={handleLogin} style={styles.loginButton} hitSlop={10}>
+            <Pressable onPress={handleEmailSubmit} style={styles.loginButton} hitSlop={10}>
               {loading
                 ? <ActivityIndicator color="#fff"/>
                 : <Text style={styles.loginText}>LOGIN</Text>
               }
             </Pressable>
 
-            <Pressable onPress={handleGoogleLogin} style={styles.loginButton}>
+            <Pressable onPress={handleGoogleSubmit} style={styles.loginButton}>
               <Text style={styles.loginText}>LOGIN MED GOOGLE</Text>
             </Pressable>
 

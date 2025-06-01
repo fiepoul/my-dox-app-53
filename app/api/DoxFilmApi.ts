@@ -16,7 +16,8 @@ function getHost() {
   return '10.10.111.53'; 
 }
 
-const API_URL = `http://${getHost()}:8080/api/films`;
+//const API_URL = `http://${getHost()}:8080/api/films`;
+const API_URL = `https://2c35-80-163-43-102.ngrok-free.app/api/films`;
 
 /**
  * Fetch all films from the DOX API
