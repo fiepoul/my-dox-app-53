@@ -1,5 +1,6 @@
+// Context for authentication state management
 import { auth } from '@/firebaseconfig/firebaseconfig';
-import * as SplashScreen from 'expo-splash-screen'; // 👈 tilføj
+import * as SplashScreen from 'expo-splash-screen';
 import { onAuthStateChanged, signOut, User } from 'firebase/auth';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
