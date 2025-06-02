@@ -22,30 +22,34 @@ const HEADER_OFFSET =
 
 export default function FriendsTab() {
   const router = useRouter()
-  const { friendsFavorites, allFilms, refreshFriends, removeFriend, loading } = useAppData();
+  const { friendsFavorites, allFilms, removeFriend, loading } = useAppData();
 
   // Remove a friend (mutual)
   const handleRemove = useCallback(
   async (uid: string) => {
-    await removeFriend(uid);
-    await refreshFriends(); 
+    await removeFriend(uid); 
   },
-  [removeFriend, refreshFriends]
+  [removeFriend]
 );
+
+const filmMap = React.useMemo(() => {
+  const map = new Map<number, string>();
+  allFilms.forEach(f => map.set(f.id, f.title));
+  return map;
+}, [allFilms]);
+
 
 if (loading) return <Text>Loading...</Text>;
 
   // Helper: find a film title by its ID
   const findFilmTitle = (id: number) => {
-    const m = allFilms.find(f => f.id === id)
-    return m?.title || `Film ID ${id}`
-  }
-
+  return filmMap.get(id) || `Film ID ${id}`;
+}
   return (
     <SafeAreaView style={[commonStyles.container]}>
       <FlatList
         data={friendsFavorites}
-        keyExtractor={(item, idx) => item.uid + idx}
+        keyExtractor={(item) => item.uid}
         contentContainerStyle={[
           styles.list,
           { paddingTop: HEADER_OFFSET + 24 },

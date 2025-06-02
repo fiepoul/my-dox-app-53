@@ -1,7 +1,7 @@
 // context/AppDataContext.tsx
 import { addFavorite, fetchFavorites, removeFavorite } from '@/api/DoxFavoritesApi';
 import { fetchDoxFilms } from '@/api/DoxFilmApi';
-import { fetchFriendsFavorites } from '@/api/friendsApi';
+import { subscribeToFriendsFavorites } from '@/api/friendsApi';
 import { addFriendByUsername, removeFriend as apiRemoveFriend, fetchCurrentUserData } from '@/api/userApi';
 import type { FavoriteInput, FriendFavorite } from '@/types/favoriteTypes';
 import type { Film } from '@/types/filmTypes';
@@ -16,7 +16,6 @@ type AppDataContextType = {
   myFavorites: number[];
   friendsFavorites: FriendFavorite[];
   loading: boolean;
-  refreshFriends: () => Promise<void>;
   refreshFavorites: () => Promise<void>;
   addFavorite: (film: FavoriteInput) => Promise<void>;        
   removeFavorite: (filmId: number) => Promise<void>;      
@@ -37,21 +36,34 @@ export const AppDataProvider = ({ children }: { children: React.ReactNode }) => 
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!user) {
+      setFriendsFavorites([]); // hvis bruger er logget ud
+      return;
+    }
+
+    const unsubscribe = subscribeToFriendsFavorites((data) => {
+      setFriendsFavorites(data);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [user]);
+
+  useEffect(() => {
     if (!user) return;
 
     const loadData = async () => {
       try {
-        const [userData, films, favs, friendsFavs] = await Promise.all([
+        const [userData, films, favs] = await Promise.all([
           fetchCurrentUserData(),
           fetchDoxFilms(),
           fetchFavorites(),
-          fetchFriendsFavorites(),
         ]);
 
         setFullName(userData.fullName || 'Guest');
         setAllFilms(films);
         setMyFavorites(favs.map(f => Number(f.id)).filter(id => !isNaN(id)));
-        setFriendsFavorites(friendsFavs);
       } catch (err) {
         console.error('[AppDataContext] Load error:', err);
       } finally {
@@ -76,22 +88,11 @@ const handleRemoveFavorite = async (id: number) => {
 
 const handleAddFriend = async (username: string) => {
   await addFriendByUsername(username);
-  const updated = await fetchFriendsFavorites();
-  setFriendsFavorites(updated);
 };
 
 const handleRemoveFriend = async (uid: string) => {
   await apiRemoveFriend(uid);
-  const updated = await fetchFriendsFavorites();
-  setFriendsFavorites(updated);
 };
-
-
-  // Refresh friends
-  const refreshFriends = async () => {
-    const updated = await fetchFriendsFavorites();
-    setFriendsFavorites(updated);
-  };
 
   const refreshFavorites = async () => {
   const favs = await fetchFavorites();
@@ -107,7 +108,6 @@ const handleRemoveFriend = async (uid: string) => {
     myFavorites,
     friendsFavorites,
     loading,
-    refreshFriends,
     refreshFavorites,
     addFavorite: handleAddFavorite,
     removeFavorite: handleRemoveFavorite,

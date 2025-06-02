@@ -1,33 +1,28 @@
-import { addFriendByUsername } from '@/api/userApi'
 import React, { useState } from 'react'
 import {
-    Keyboard,
-    Pressable,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View
 } from 'react-native'
+import { useAppData } from '../context/AppDataContext'
 
 interface AddFriendProps {
-  /** Optional prompt shown above input */
+  /** prompt shown above input */
   promptText: string
 }
 
 export default function AddFriend({ promptText }: AddFriendProps) {
   const [username, setUsername] = useState('')
   const [message, setMessage] = useState('')
+  const { addFriend } = useAppData()
 
   const handleAdd = async () => {
-    Keyboard.dismiss()
-    try {
-      await addFriendByUsername(username.trim())
-      setMessage('✔ FRIEND ADDED')
-      setUsername('')
-    } catch (e: any) {
-      setMessage(e.message?.toUpperCase() || 'SOMETHING WENT WRONG')
-    }
-  }
+  await addFriend(username.trim()); // opdaterer global state
+  setMessage('✔ FRIEND ADDED');
+  setUsername('');
+};
 
   return (
     <View style={styles.wrapper}>
