@@ -7,9 +7,12 @@ import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const insets = useSafeAreaInsets(); 
+  const headerHeight = 80 + insets.top
 
   return (
     <Tabs
@@ -23,6 +26,9 @@ export default function TabLayout() {
           ios: { position: 'absolute' },
           default: {},
         }),
+        headerStyle: { // Apply the top padding in here
+          height: headerHeight,
+        }
       }}
     >
       {/* Home Tab */}

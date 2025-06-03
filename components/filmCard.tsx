@@ -1,29 +1,28 @@
 // This component displays a film card with a poster, title, tagline, info line, and a favorite icon. It uses React Native components and styles to create a visually appealing layout.
 
+import { useMovieNavigation } from '@/hooks/useMovieNavigation'
 import type { Film } from '@/types/filmTypes'
-import * as Haptics from 'expo-haptics'
 import React from 'react'
 import {
-  Platform,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from 'react-native'
 
 interface FilmCardProps {
   film: Film
   isFavorite: boolean
-  onPress: (id: number) => void
   onToggleFavorite: (film: Film) => void
 }
 
 export default function FilmCard({
   film,
   isFavorite,
-  onPress,
   onToggleFavorite,
 }: FilmCardProps) {
+  const { goToMovieDetails } = useMovieNavigation(); // Use the custom hook
+
   const infoParts = [
     film.director,
     film.year != null ? film.year.toString() : null,
@@ -31,19 +30,20 @@ export default function FilmCard({
     film.category,
   ]
     .filter(Boolean)
-    .join(' / ')
+    .join(' / ');
+
+
+    //Afkort filmnavn
+  const titleParts = film.title.split(' ');
+  const shortenedTitle = titleParts.slice(0, 3).join(' ');
+  const displayTitle = titleParts.length > 4 ? shortenedTitle + '...' : shortenedTitle
 
   return (
     <View style={styles.card}>
       {/* Poster */}
       <TouchableOpacity
         style={styles.poster}
-        onPress={() => {
-          onPress(film.id)
-          if (Platform.OS !== 'web') {
-            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
-          }
-        }}
+        onPress={() => goToMovieDetails(film.id)} // Call goToMovieDetails
         activeOpacity={0.8}
       >
         <Text style={styles.posterText}>DOX</Text>
@@ -51,19 +51,22 @@ export default function FilmCard({
 
       <View style={styles.content}>
         {/* Title */}
-        <Text style={styles.title}>
-          {film.title.toUpperCase()}
+        <Text style={styles.title} numberOfLines={2} ellipsizeMode="tail">
+          {displayTitle.toUpperCase()}
         </Text>
 
-        {/* Tagline (show full) */}
+        {/* Tagline (show limited and add ellipsize) */}
         {film.tagline ? (
-          <Text style={styles.tagline}>
+          <Text style={styles.tagline} numberOfLines={2} ellipsizeMode="tail">
             {film.tagline}
           </Text>
         ) : null}
 
+        </View>
+
         {/* Info line */}
-        <Text style={styles.infoRow}>{infoParts}</Text>
+       <View style={styles.bottom}>
+           <Text style={[styles.infoRow]} numberOfLines={1} ellipsizeMode="tail">{infoParts}</Text>
       </View>
 
       {/* Favorite icon */}
@@ -82,12 +85,13 @@ export default function FilmCard({
 
 const styles = StyleSheet.create({
   card: {
-    width: '49%',
+    width: 152,      // Fast bredde
+    height: 200, 
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: '#000',
-    marginBottom: 16,
     position: 'relative',
+    overflow: 'hidden', // Skjul indhold der overskrider størrelsen
   },
   poster: {
     width: '100%',
@@ -106,7 +110,7 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   title: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: '900',
     color: '#000',
     marginBottom: 4,
@@ -139,4 +143,11 @@ const styles = StyleSheet.create({
   heartActive: {
     color: '#ff5f6d',
   },
+  bottom: {
+    position: "absolute",
+    bottom: 4,
+    left: 0,
+    width: "100%",
+    padding: 4
+  }
 })

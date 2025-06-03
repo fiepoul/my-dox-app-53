@@ -2,33 +2,26 @@
 import FilmCard from '@/components/filmCard';
 import SectionHeader from '@/components/SectionHeader';
 import { commonStyles } from '@/styles/CommonStyles';
-import { useRouter } from 'expo-router';
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import {
   ActivityIndicator,
   Animated,
   FlatList,
-  Platform,
   SafeAreaView,
-  StatusBar,
   StyleSheet,
   Text,
-  View,
+  View
 } from 'react-native';
-import { removeFavorite } from '../../api/DoxFavoritesApi';
 import { useAppData } from '../../context/AppDataContext';
 
-const HEADER_OFFSET =
-  Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 60 : 60;
-
 export default function FavoritesScreen() {
-  const router = useRouter();
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
   const {
     allFilms,
     myFavorites,
     loading,
+    removeFavorite,
     refreshFavorites,
   } = useAppData();
 
@@ -41,11 +34,11 @@ export default function FavoritesScreen() {
   }, []);
 
   const handleRemove = useCallback(
-    async (id: number) => {
-      await removeFavorite(id);
-      await refreshFavorites(); // 👈 opdater context-data
-    },
-    [refreshFavorites]
+  async (id: number) => {
+    await removeFavorite(id);
+    await refreshFavorites(); // opdaterer data i context
+  },
+  [removeFavorite, refreshFavorites]  
   );
 
   const favoriteFilms = useMemo(
@@ -70,7 +63,7 @@ export default function FavoritesScreen() {
         columnWrapperStyle={styles.row}
         contentContainerStyle={[
           styles.list,
-          { paddingTop: HEADER_OFFSET + 24 }, 
+          { paddingTop: 24 }, 
         ]}
         ListHeaderComponent={
           <View style={styles.headerBlock}>
@@ -89,9 +82,6 @@ export default function FavoritesScreen() {
           <FilmCard
             film={item}
             isFavorite={true}
-            onPress={(id) =>
-              router.push({ pathname: '/movie/[id]', params: { id: id.toString() } })
-            }
             onToggleFavorite={({ id }) => handleRemove(id)}
           />
         )}

@@ -120,7 +120,7 @@ const handleRemoveFriend = async (uid: string) => {
   );
 };
 
-// 4️⃣ Hook med error hvis ikke inde i provider
+// Hook med error hvis ikke inde i provider
 export const useAppData = (): AppDataContextType => {
   const context = useContext(AppDataContext);
   if (!context) {

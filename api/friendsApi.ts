@@ -18,7 +18,6 @@ export function subscribeToFriendsFavorites(callback: (data: FriendFavorite[]) =
 
   const userRef = doc(db, 'users', uid);
 
-  // Lyt til brugerens dokument for at få list over venner
   const unsubscribeUser = onSnapshot(userRef, async (userSnap) => {
     if (!userSnap.exists()) {
       callback([]);
@@ -26,17 +25,11 @@ export function subscribeToFriendsFavorites(callback: (data: FriendFavorite[]) =
     }
     const friendUids: string[] = userSnap.data().friends || [];
 
-    // Hvis ingen venner, retur
     if (friendUids.length === 0) {
       callback([]);
       return;
     }
 
-    // Samle alle venner's favoritter i et array
-    const allFavorites: FriendFavorite[] = [];
-
-    // For hver ven, lyt til deres 'favorites'-kald
-    // Her bruger vi `Promise.all` for at håndtere flere async kald samtidigt
     const promises = friendUids.map(async (friendUid) => {
       const userDocSnap = await getDoc(doc(db, 'users', friendUid));
       const favsSnap = await getDocs(

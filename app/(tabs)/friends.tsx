@@ -1,28 +1,22 @@
 // This file shows the user's friends and their favorite films.
 import AddFriend from '@/components/addFriends';
+import { renderFilmRow } from '@/components/renderFilmRow';
 import SectionHeader from '@/components/SectionHeader';
 import { commonStyles } from '@/styles/CommonStyles';
 import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
 import React, { useCallback } from 'react';
 import {
   FlatList,
-  Platform,
   Pressable,
   SafeAreaView,
-  StatusBar,
   StyleSheet,
   Text,
-  View,
+  View
 } from 'react-native';
 import { useAppData } from '../../context/AppDataContext';
 
-const HEADER_OFFSET =
-  Platform.OS === 'android' ? (StatusBar.currentHeight || 0) + 60 : 60
-
 export default function FriendsTab() {
-  const router = useRouter()
-  const { friendsFavorites, allFilms, removeFriend, loading } = useAppData();
+  const { friendsFavorites, allFilms, removeFriend } = useAppData();
 
   // Remove a friend (mutual)
   const handleRemove = useCallback(
@@ -31,20 +25,6 @@ export default function FriendsTab() {
   },
   [removeFriend]
 );
-
-const filmMap = React.useMemo(() => {
-  const map = new Map<number, string>();
-  allFilms.forEach(f => map.set(f.id, f.title));
-  return map;
-}, [allFilms]);
-
-
-if (loading) return <Text>Loading...</Text>;
-
-  // Helper: find a film title by its ID
-  const findFilmTitle = (id: number) => {
-  return filmMap.get(id) || `Film ID ${id}`;
-}
   return (
     <SafeAreaView style={[commonStyles.container]}>
       <FlatList
@@ -52,10 +32,10 @@ if (loading) return <Text>Loading...</Text>;
         keyExtractor={(item) => item.uid}
         contentContainerStyle={[
           styles.list,
-          { paddingTop: HEADER_OFFSET + 24 },
+          { paddingTop: 24 },
         ]}
         ListHeaderComponent={
-          <View style={styles.headerBlock}>
+          <View style={commonStyles.headerBlock}>
             <SectionHeader
               title="MY FRIENDS"
               subtitle="WHY WATCH ALONE WHEN YOU CAN AUDITION A FRIEND?"
@@ -64,7 +44,7 @@ if (loading) return <Text>Loading...</Text>;
           </View>
         }
         ListEmptyComponent={
-          <Text style={styles.emptyListText}>
+          <Text style={commonStyles.emptyText}>
             YOU HAVEN’T ADDED ANY FRIENDS YET
           </Text>
         }
@@ -79,25 +59,10 @@ if (loading) return <Text>Loading...</Text>;
               </Pressable>
             </View>
             {item.favorites.length === 0 ? (
-              <Text style={styles.emptyText}>NO LIKED FILMS YET</Text>
+              <Text style={commonStyles.emptyText}>NO LIKED FILMS YET</Text>
             ) : (
-              <View style={styles.filmGrid}>
-                {item.favorites.map((fid: number) => (
-                  <Pressable
-                    key={fid}
-                    style={styles.filmCard}
-                    onPress={() =>
-                      router.push({
-                        pathname: '/movie/[id]',
-                        params: { id: fid.toString() },
-                      })
-                    }
-                  >
-                    <Text style={styles.filmTitle} numberOfLines={3}>
-                      {findFilmTitle(fid).toUpperCase()}
-                    </Text>
-                  </Pressable>
-                ))}
+              <View>
+                {renderFilmRow({ filmIds: item.favorites, allFilms: allFilms})}
               </View>
             )}
           </View>
@@ -133,43 +98,5 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     color: '#000',
     letterSpacing: 1,
-  },
-
-  filmGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-  },
-  filmCard: {
-    width: '44%',
-    aspectRatio: 3 / 4,
-    backgroundColor: '#0047ff',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 8,
-    borderRadius: 4,
-    padding: 6,
-  },
-  filmTitle: {
-    color: '#fff',
-    fontSize: 14,
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: 1,
-    textTransform: 'uppercase',
-  },
-
-  emptyListText: {
-    marginTop: 80,
-    textAlign: 'center',
-    color: '#777',
-    fontSize: 16,
-    fontStyle: 'italic',
-  },
-  emptyText: {
-    color: '#888',
-    fontStyle: 'italic',
-    textTransform: 'uppercase',
-    fontSize: 13,
   },
 })

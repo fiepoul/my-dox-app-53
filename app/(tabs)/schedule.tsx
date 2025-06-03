@@ -6,7 +6,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Animated,
-  Platform,
   Pressable,
   SafeAreaView,
   StatusBar,
@@ -112,9 +111,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: Platform.OS === 'android'
-      ? (StatusBar.currentHeight ?? 0) + 48
-      : 60,
     paddingHorizontal: 20,
     borderBottomWidth: 2,
     borderBottomColor: '#0047ff'

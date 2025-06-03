@@ -1,8 +1,10 @@
 // Context for authentication state management
 import { auth } from '@/firebaseconfig/firebaseconfig';
+import * as Haptics from 'expo-haptics';
 import * as SplashScreen from 'expo-splash-screen';
 import { onAuthStateChanged, signOut, User } from 'firebase/auth';
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { Platform } from 'react-native';
 
 type AuthContextType = {
   user: User | null;
@@ -38,6 +40,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const logout = async () => {
     try {
+      if (Platform.OS !== 'web') Haptics.selectionAsync();
       await signOut(auth);
     } catch (error) {
       console.error('[AUTH] Logout failed:', error);

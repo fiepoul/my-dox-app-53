@@ -1,12 +1,11 @@
+import { renderFilmRow } from '@/components/renderFilmRow';
 import { useAuth } from '@/context/AuthContext';
 import { commonStyles } from '@/styles/CommonStyles';
-import type { Film } from '@/types/filmTypes';
 import { AntDesign } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useEffect, useRef } from 'react';
 import {
   Animated,
-  FlatList,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -22,16 +21,16 @@ export default function HomeScreen() {
   const { user, initializing } = useAuth();
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const router = useRouter();
-  const { fullName, myFavorites, friendsFavorites, allFilms, loading} = useAppData();
+  const { fullName, myFavorites, friendsFavorites, allFilms} = useAppData();
 
-  // 🔁 Redirect hvis ikke logget ind
+  // Redirect hvis ikke logget ind
 useEffect(() => {
   if (!initializing && !user) {
     router.replace('/login');
   }
 }, [initializing, user, router]);
 
-// 🎞️ Animation — kører kun én gang ved mount
+// Animation — kører kun én gang ved mount
 useEffect(() => {
   Animated.timing(fadeAnim, {
     toValue: 1,
@@ -40,50 +39,13 @@ useEffect(() => {
   }).start();
 }, []); 
 
-if (loading) {
-  return (
-    <SafeAreaView style={[commonStyles.container]}>
-      <Text>Loading...</Text>
-    </SafeAreaView>
-  );
-}
-
 
   const goToFavorite = () => router.push('/favorites');
   const goToFriends = () => router.push('/friends');
 
-  const Poster = ({ title, id }: { title: string; id: number }) => (
-    <TouchableOpacity onPress={() => router.push(`/movie/${id}`)} style={styles.posterWrap}>
-      <Animated.View style={[styles.poster, { transform: [{ scale: fadeAnim }] }]}>
-        <Text style={styles.posterText}>{title}</Text>
-      </Animated.View>
-    </TouchableOpacity>
-  );
-
-  const renderPosterRow = (filmIds: number[]) => {
-    const posters = filmIds
-      .map(id => allFilms.find(f => f.id === id))
-      .filter((f): f is Film => Boolean(f))
-      .slice(0, 10);
-
-    return (
-      <FlatList
-        data={posters}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <Poster title={item.title} id={item.id} />}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ gap: 16 }}
-      />
-    );
-  };
-
   return (
     <SafeAreaView style={[commonStyles.container]}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <View style={styles.header}>
-        <Text style={styles.logo}>DOX</Text>
-      </View>
 
       <Animated.View style={[styles.content, { opacity: fadeAnim }]}>
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -103,7 +65,7 @@ if (loading) {
               <AntDesign name="right" size={18} color="#0047ff" />
             </TouchableOpacity>
             {myFavorites.length > 0
-              ? renderPosterRow(myFavorites)
+              ? renderFilmRow({ filmIds: myFavorites, allFilms })
               : <Text style={[commonStyles.emptyText]}>You haven’t liked any films yet.</Text>}
           </View>
 
@@ -113,12 +75,9 @@ if (loading) {
               <AntDesign name="right" size={18} color="#0047ff" />
             </TouchableOpacity>
             {friendsFavorites.length > 0 ? (
-              renderPosterRow(
-                friendsFavorites
-                  .flatMap(friend => friend.favorites)
+              renderFilmRow({ filmIds: friendsFavorites.flatMap(friend => friend.favorites)
                   .filter((id, index, arr) => arr.indexOf(id) === index)
-                  .slice(0, 10)
-              )
+                  .slice(0, 10), allFilms })
             ) : (
               <Text style={[commonStyles.emptyText]}>Your friends haven’t liked any films yet.</Text>
             )}
@@ -185,25 +144,5 @@ const styles = StyleSheet.create({
     color: '#000',
     textTransform: 'uppercase',
     letterSpacing: 1,
-  },
-  posterWrap: {
-    borderRadius: 4,
-    overflow: 'hidden',
-  },
-  poster: {
-    width: 130,
-    height: 190,
-    backgroundColor: '#0047ff',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 14,
-  },
-  posterText: {
-    color: '#fff',
-    fontSize: 13,
-    fontWeight: '800',
-    textAlign: 'center',
-    textTransform: 'uppercase',
-    letterSpacing: 0.5,
   }
 });

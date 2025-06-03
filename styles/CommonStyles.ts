@@ -1,11 +1,11 @@
-import { Platform, StatusBar, StyleSheet } from 'react-native';
+import { HEADER_HEIGHT } from '@/utils/constants';
+import { StyleSheet } from 'react-native';
 
 export const commonStyles = StyleSheet.create({
   container: {
     flex: 1,
         backgroundColor: '#fff',
-        paddingTop:
-          Platform.OS === 'android' ? StatusBar.currentHeight || 0 : 0,
+        paddingTop: HEADER_HEIGHT + 24
   },
   center: {
     flex: 1,
@@ -46,5 +46,30 @@ export const commonStyles = StyleSheet.create({
     marginBottom: 12,
     paddingHorizontal: 20,
     letterSpacing: 1,
-  }
+  },
+  headerBlock: {
+    marginBottom: 24,
+    alignItems: 'center',
+    zIndex: 1,
+  },
+  posterWrap: {
+        borderRadius: 4,
+        overflow: 'hidden',
+       },
+       poster: {
+         width: 130,
+         height: 190,
+         backgroundColor: '#0047ff',
+         justifyContent: 'center',
+         alignItems: 'center',
+         padding: 14,
+       },
+       posterText: {
+         color: '#fff',
+         fontSize: 13,
+         fontWeight: '800',
+         textAlign: 'center',
+         textTransform: 'uppercase',
+         letterSpacing: 0.5,
+       },
 });
